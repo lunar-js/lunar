@@ -1,10 +1,70 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "@aindleads/boiler-room",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "type": "module",
   "packageManager": "pnpm@10.5.2",
-  "description": "This package contains various boilerplate files for node applications",
+  "description": "This package contains various boilerplate files/configs for node applications",
+  "exports": {
+    "./eslint": {
+      "import": {
+        "types": "./dist/eslint.d.ts",
+        "default": "./dist/eslint.js"
+      }
+    },
+    "./prettier": {
+      "import": {
+        "types": "./dist/prettier.d.ts",
+        "default": "./dist/prettier.js"
+      }
+    },
+    "./tsconfig/base.json": "./src/tsconfig/tsconfig.base.json",
+    "./tsconfig/cjs.json": "./src/tsconfig/tsconfig.cjs.json",
+    "./tsconfig/esm.json": "./src/tsconfig/tsconfig.esm.json"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "*.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "____ RUN COMMANDS ____": "",
+    "dev": "tsdown --watch",
+    "____ BUILD COMMANDS ____": "",
+    "build": "pnpm run clean:build && pnpm run build:dist",
+    "build:dist": "tsdown --config ./tsdown.config.ts --format esm",
+    "____ VALIDATION COMMANDS ____": "",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:fix": "pnpm run lint --fix",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit",
+    "____ CLEANUP COMMANDS ____": "",
+    "clean": "pnpm run clean:build",
+    "clean:build": "rimraf dist"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-storybook": "^9.0.18",
+    "eslint-plugin-unicorn": "^60.0.0",
+    "globals": "^16.3.0",
+    "tsdown": "^0.13.0",
+    "typescript-eslint": "^8.38.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9",
+    "prettier": "^3",
+    "typescript": "^5"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
   },
   "license": "UNLICENSED"
 }

@@ -1,10 +1,46 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "@aindleads/lunar",
-  "version": "0.0.1",
-  "packageManager": "pnpm@10.5.2",
   "description": "Lunar is a radix/shadcn inspired component/design library",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "*.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "____ RUN COMMANDS ____": "",
+    "dev": "tsdown --watch",
+    "____ BUILD COMMANDS ____": "",
+    "build": "pnpm run clean:build && pnpm run build:dist",
+    "build:dist": "tsdown --config ./tsdown.config.ts --format esm",
+    "____ VALIDATION COMMANDS ____": "",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:fix": "pnpm run lint --fix",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit",
+    "____ CLEANUP COMMANDS ____": "",
+    "clean": "pnpm run clean:build",
+    "clean:build": "rimraf dist"
+  },
+  "devDependencies": {
+    "tsdown": "^0.13.0"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19"
   },
   "license": "UNLICENSED"
 }

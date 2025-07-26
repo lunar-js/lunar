@@ -9,13 +9,10 @@
     /* Emit */
     "noEmit": false,
     "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
     /* Language and Environment */
+    "target": "es2020"
   },
-  "exclude": [
-    "node_modules",
-    "**/__tests__",
-    "**/*.test.*",
-    "**/*.stories*"
-  ]
+  "exclude": ["node_modules", "**/__tests__", "**/*.test.*", "**/*.stories*"]
 }

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./src/tsconfig/tsconfig.esm.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "declarationDir": "dist"
+  },
+  "include": ["src"]
+}

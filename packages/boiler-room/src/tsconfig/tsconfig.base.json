@@ -7,7 +7,7 @@
     // These are organized into the groups from https://www.typescriptlang.org/tsconfig, as of 11/23/2021
     /* Type Checking */
     "strict": true,
-    "allowUncreachableCode": false,
+    "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
@@ -17,8 +17,8 @@
     "noUnusedParameters": true,
     "exactOptionalPropertyTypes": true,
     /* Modules */
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     /* Emit */
     "noEmit": true,
     "allowJs": true,
@@ -30,7 +30,5 @@
     "jsx": "react",
     "skipLibCheck": true
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules", "build", "dist", "storybook-static"]
 }

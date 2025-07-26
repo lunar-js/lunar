@@ -5,11 +5,13 @@ A pnpm workspaces monorepo
 ## Setup
 
 1. Ensure you have Node.js 24+ installed:
+
    ```bash
    nvm use
    ```
 
 2. Install pnpm if you haven't already:
+
    ```bash
    npm install -g pnpm
    ```
