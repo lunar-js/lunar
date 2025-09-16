@@ -1,5 +1,5 @@
 export default {
   '**/*.{css,html,js,jsx,json,less,md,scss,ts,tsx,yaml}': ['prettier --write'],
-  'src/**/*.{js,jsx,ts,tsx}': ['eslint --max-warnings=0 --fix'],
+  'src/**/*.{js,jsx,ts,tsx}': ['eslint --max-warnings=0 --fix --debug'],
   '**/*.{js,ts}?(x)': () => 'tsc -p tsconfig.json --noEmit',
 };
