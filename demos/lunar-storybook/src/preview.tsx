@@ -1,7 +1,9 @@
 import type { Preview } from '@storybook/react-vite';
 import { withThemeByClassName } from '@storybook/addon-themes';
 
-import { lightTheme, darkTheme } from '@wcm/lunar/src/index.js';
+import { regalTheme } from '@wcm/lunar/src/index.js';
+import { darkScheme, lightScheme } from './main.css.js';
+import { withColorSchemeByClassName } from './utils/withColorSchemeByClassName.js';
 
 const preview: Preview = {
   parameters: {
@@ -19,12 +21,17 @@ const preview: Preview = {
     },
   },
   decorators: [
+    withColorSchemeByClassName({
+      colorScheme: {
+        light: lightScheme,
+        dark: darkScheme,
+      },
+    }),
     withThemeByClassName({
       themes: {
-        light: lightTheme,
-        dark: darkTheme,
+        regal: regalTheme,
       },
-      defaultTheme: 'light',
+      defaultTheme: 'regal',
     }),
   ],
 };
