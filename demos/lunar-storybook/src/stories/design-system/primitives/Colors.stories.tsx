@@ -8,6 +8,7 @@ import {
   COLORS__GOLD,
   COLORS__PEARL,
   COLORS__YELLOW,
+  COLORS__BLUE,
 } from '@wcm/lunar/src/index.js';
 
 const meta = {
@@ -64,6 +65,7 @@ export const AllColors: Story = {
       <ColorScale colors={COLORS__RED} name="Red" />
       <ColorScale colors={COLORS__YELLOW} name="Yellow" />
       <ColorScale colors={COLORS__GREEN} name="Green" />
+      <ColorScale colors={COLORS__BLUE} name="Blue" />
       <ColorScale colors={COLORS__GOLD} name="Gold" />
       <ColorScale colors={COLORS__PEARL} name="Pearl" />
     </div>
@@ -87,7 +89,8 @@ export const ByCategory: Story = {
       </div>
 
       <div style={{ marginBottom: '48px' }}>
-        <h2 style={{ marginBottom: '24px', fontSize: '24px', fontWeight: '600' }}>Nature Colors</h2>
+        <h2 style={{ marginBottom: '24px', fontSize: '24px', fontWeight: '600' }}>Cool Colors</h2>
+        <ColorScale colors={COLORS__BLUE} name="Blue" />
         <ColorScale colors={COLORS__GREEN} name="Green" />
       </div>
     </div>
@@ -105,6 +108,7 @@ export const Primary500: Story = {
         <ColorSwatch color={COLORS__STONE[500]} name="Stone" />
         <ColorSwatch color={COLORS__RED[500]} name="Red" />
         <ColorSwatch color={COLORS__GREEN[500]} name="Green" />
+        <ColorSwatch color={COLORS__BLUE[500]} name="Blue" />
         <ColorSwatch color={COLORS__GOLD[500]} name="Gold" />
         <ColorSwatch color={COLORS__PEARL[500]} name="Pearl" />
         <ColorSwatch color={COLORS__YELLOW[500]} name="Yellow" />
