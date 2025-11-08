@@ -1,5 +1,6 @@
-import { StoryContext } from '@storybook/react-vite';
+import type React from 'react';
 import { useEffect } from 'react';
+import type { StoryContext } from '@storybook/react-vite';
 
 interface ColorSchemeByClassNameProps {
   colorScheme: {
@@ -11,14 +12,11 @@ interface ColorSchemeByClassNameProps {
 
 const DEFAULT_PARENT_SELECTOR = 'html';
 
-const withColorSchemeByClassName = ({
-  colorScheme,
-  parentSelector = DEFAULT_PARENT_SELECTOR,
-}: ColorSchemeByClassNameProps) => {
+const ColorSchemeWrapper = ({ colorScheme, parentSelector = DEFAULT_PARENT_SELECTOR }: ColorSchemeByClassNameProps) => {
   const { light, dark } = colorScheme;
 
-  return (storyFn: any, context: StoryContext) => {
-    const { value: colorScheme } = context.globals?.backgrounds ?? {};
+  return (storyFn: () => React.ReactElement, context: StoryContext) => {
+    const colorScheme = (context.globals as { backgrounds?: { value: string } } | undefined)?.backgrounds?.value;
 
     useEffect(() => {
       const colorSchemeClassName = colorScheme === 'dark' ? dark : light;
@@ -35,4 +33,4 @@ const withColorSchemeByClassName = ({
   };
 };
 
-export { withColorSchemeByClassName };
+export default ColorSchemeWrapper;

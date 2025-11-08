@@ -3,7 +3,7 @@ import { withThemeByClassName } from '@storybook/addon-themes';
 
 import { regalTheme, themeContract } from '@wcm/lunar/src/index.js';
 import { darkScheme, lightScheme } from './main.css.js';
-import { withColorSchemeByClassName } from './utils/withColorSchemeByClassName.js';
+import ColorSchemeWrapper from './components/decorators/ColorSchemeWrapper.js';
 
 const preview: Preview = {
   initialGlobals: {
@@ -30,7 +30,7 @@ const preview: Preview = {
     },
   },
   decorators: [
-    withColorSchemeByClassName({
+    ColorSchemeWrapper({
       colorScheme: {
         light: lightScheme,
         dark: darkScheme,
