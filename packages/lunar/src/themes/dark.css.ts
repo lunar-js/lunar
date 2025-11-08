@@ -1,7 +1,14 @@
 import { createTheme } from '@vanilla-extract/css';
 
 import { themeContract } from '../tokens/tokens.css.js';
-import { COLORS__PEARL } from '../tokens/primitives/colors.js';
+import {
+  COLORS__PEARL,
+  COLORS__GOLD,
+  COLORS__GREEN,
+  COLORS__YELLOW,
+  COLORS__RED,
+  COLORS__BLUE,
+} from '../tokens/primitives/colors.js';
 import { SPACING } from '../tokens/primitives/spacing.js';
 import { FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, LETTER_SPACING } from '../tokens/primitives/typography.js';
 import { BORDER_RADIUS, BORDER_WIDTH } from '../tokens/primitives/borders.js';
@@ -9,95 +16,125 @@ import { BOX_SHADOW } from '../tokens/primitives/shadows.js';
 
 const darkTheme = createTheme(themeContract, {
   colors: {
-    'action.primary': `oklch(${COLORS__PEARL[900]})`,
-    'action.primary.hover': `oklch(${COLORS__PEARL[900]})`,
-    'action.primary.active': `oklch(${COLORS__PEARL[900]})`,
-    'action.primary.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'action.secondary': `oklch(${COLORS__PEARL[900]})`,
-    'action.secondary.hover': `oklch(${COLORS__PEARL[900]})`,
-    'action.secondary.active': `oklch(${COLORS__PEARL[900]})`,
-    'action.secondary.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'action.destructive': `oklch(${COLORS__PEARL[900]})`,
-    'action.destructive.hover': `oklch(${COLORS__PEARL[900]})`,
-    'action.destructive.active': `oklch(${COLORS__PEARL[900]})`,
-    'action.destructive.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'action.ghost': `oklch(${COLORS__PEARL[900]})`,
-    'action.ghost.hover': `oklch(${COLORS__PEARL[900]})`,
-    'action.ghost.active': `oklch(${COLORS__PEARL[900]})`,
-    'action.ghost.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'border.default': `oklch(${COLORS__PEARL[900]})`,
-    'border.subtle': `oklch(${COLORS__PEARL[900]})`,
-    'border.strong': `oklch(${COLORS__PEARL[900]})`,
-    'border.interactive': `oklch(${COLORS__PEARL[900]})`,
-    'border.interactive.hover': `oklch(${COLORS__PEARL[900]})`,
-    'border.interactive.active': `oklch(${COLORS__PEARL[900]})`,
-    'border.focus': `oklch(${COLORS__PEARL[900]})`,
-    'border.success': `oklch(${COLORS__PEARL[900]})`,
-    'border.warning': `oklch(${COLORS__PEARL[900]})`,
-    'border.error': `oklch(${COLORS__PEARL[900]})`,
-    'border.info': `oklch(${COLORS__PEARL[900]})`,
-    'border.action.primary': `oklch(${COLORS__PEARL[900]})`,
-    'border.action.secondary': `oklch(${COLORS__PEARL[900]})`,
-    'border.action.destructive': `oklch(${COLORS__PEARL[900]})`,
-    'border.action.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'text.primary': `oklch(${COLORS__PEARL[900]})`,
-    'text.secondary': `oklch(${COLORS__PEARL[900]})`,
-    'text.tertiary': `oklch(${COLORS__PEARL[900]})`,
-    'text.interactive': `oklch(${COLORS__PEARL[900]})`,
-    'text.interactive.hover': `oklch(${COLORS__PEARL[900]})`,
-    'text.interactive.active': `oklch(${COLORS__PEARL[900]})`,
-    'text.success': `oklch(${COLORS__PEARL[900]})`,
-    'text.warning': `oklch(${COLORS__PEARL[900]})`,
-    'text.error': `oklch(${COLORS__PEARL[900]})`,
-    'text.info': `oklch(${COLORS__PEARL[900]})`,
-    'text.inverse': `oklch(${COLORS__PEARL[900]})`,
-    'text.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.primary': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.secondary': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.tertiary': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.interactive': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.interactive.hover': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.interactive.active': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.success': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.warning': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.error': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.info': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.overlay': `oklch(${COLORS__PEARL[900]})`,
+    // ACTION COLORS - Primary uses GOLD (brand), Secondary uses GOLD border, Destructive uses RED
+    'action.primary': `oklch(${COLORS__GOLD[500]})`, // Gold background (same as light)
+    'action.primary.hover': `color-mix(in oklch, oklch(${COLORS__GOLD[500]}) 90%, transparent)`, // 10% opacity reduction
+    'action.primary.active': `color-mix(in oklch, oklch(${COLORS__GOLD[500]}) 80%, transparent)`, // 20% opacity reduction
+    'action.primary.disabled': `color-mix(in oklch, oklch(${COLORS__GOLD[500]}) 40%, transparent)`, // 60% opacity reduction
+
+    'action.secondary': `transparent`, // Transparent background with gold border
+    'action.secondary.hover': `color-mix(in oklch, oklch(${COLORS__GOLD[900]}) 10%, transparent)`, // Dark gold tint
+    'action.secondary.active': `color-mix(in oklch, oklch(${COLORS__GOLD[800]}) 20%, transparent)`, // Slightly more gold tint
+    'action.secondary.disabled': `transparent`,
+
+    'action.destructive': `oklch(${COLORS__RED[500]})`, // Red background
+    'action.destructive.hover': `color-mix(in oklch, oklch(${COLORS__RED[500]}) 90%, transparent)`,
+    'action.destructive.active': `color-mix(in oklch, oklch(${COLORS__RED[500]}) 80%, transparent)`,
+    'action.destructive.disabled': `color-mix(in oklch, oklch(${COLORS__RED[500]}) 40%, transparent)`,
+
+    'action.ghost': `transparent`, // Transparent background
+    'action.ghost.hover': `color-mix(in oklch, oklch(${COLORS__PEARL[800]}) 50%, transparent)`,
+    'action.ghost.active': `color-mix(in oklch, oklch(${COLORS__PEARL[700]}) 60%, transparent)`,
+    'action.ghost.disabled': `transparent`,
+
+    // BORDER COLORS - Interactive borders use GOLD
+    'border.default': `oklch(${COLORS__PEARL[700]})`, // Subtle neutral border (lighter than light theme)
+    'border.subtle': `oklch(${COLORS__PEARL[800]})`, // Very subtle border
+    'border.strong': `oklch(${COLORS__PEARL[600]})`, // Strong neutral border
+
+    'border.interactive': `oklch(${COLORS__GOLD[400]})`, // Lighter gold for dark theme
+    'border.interactive.hover': `color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 90%, transparent)`,
+    'border.interactive.active': `color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 80%, transparent)`,
+    'border.focus': `oklch(${COLORS__GOLD[400]})`, // Gold focus ring
+
+    'border.success': `oklch(${COLORS__GREEN[400]})`, // Lighter for dark theme
+    'border.warning': `oklch(${COLORS__YELLOW[400]})`,
+    'border.error': `oklch(${COLORS__RED[400]})`,
+    'border.info': `oklch(${COLORS__BLUE[400]})`,
+
+    'border.action.primary': `oklch(${COLORS__GOLD[400]})`, // Matches primary action
+    'border.action.secondary': `oklch(${COLORS__GOLD[400]})`, // Gold border for secondary
+    'border.action.destructive': `oklch(${COLORS__RED[400]})`,
+    'border.action.disabled': `oklch(${COLORS__PEARL[700]})`,
+
+    // TEXT COLORS - Primary hierarchy uses PEARL (inverted), Interactive uses GOLD
+    'text.primary': `oklch(${COLORS__PEARL[50]})`, // High contrast light text
+    'text.secondary': `oklch(${COLORS__PEARL[200]})`, // Medium contrast text
+    'text.tertiary': `oklch(${COLORS__PEARL[300]})`, // Low contrast text
+
+    'text.interactive': `oklch(${COLORS__GOLD[400]})`, // Lighter gold for links on dark
+    'text.interactive.hover': `color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 90%, transparent)`,
+    'text.interactive.active': `color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 80%, transparent)`,
+
+    'text.success': `oklch(${COLORS__GREEN[300]})`, // Lighter for better contrast on dark
+    'text.warning': `oklch(${COLORS__YELLOW[300]})`,
+    'text.error': `oklch(${COLORS__RED[300]})`,
+    'text.info': `oklch(${COLORS__BLUE[300]})`,
+
+    'text.inverse': `oklch(${COLORS__PEARL[900]})`, // Dark text for light backgrounds
+    'text.disabled': `oklch(${COLORS__PEARL[500]})`, // Muted text
+
+    // SURFACE COLORS - Layered hierarchy with PEARL (inverted)
+    'surface.bg.primary': `oklch(${COLORS__PEARL[950]})`, // Main background (darkest)
+    'surface.bg.secondary': `oklch(${COLORS__PEARL[900]})`, // Cards, panels (lighter than primary)
+    'surface.bg.tertiary': `oklch(${COLORS__PEARL[800]})`, // Elevated surfaces (lightest)
+
+    'surface.bg.interactive': `transparent`, // Interactive surface base
+    'surface.bg.interactive.hover': `color-mix(in oklch, oklch(${COLORS__GOLD[800]}) 20%, transparent)`,
+    'surface.bg.interactive.active': `color-mix(in oklch, oklch(${COLORS__GOLD[700]}) 30%, transparent)`,
+
+    'surface.bg.success': `color-mix(in oklch, oklch(${COLORS__GREEN[900]}) 30%, transparent)`,
+    'surface.bg.warning': `color-mix(in oklch, oklch(${COLORS__YELLOW[900]}) 30%, transparent)`,
+    'surface.bg.error': `color-mix(in oklch, oklch(${COLORS__RED[900]}) 30%, transparent)`,
+    'surface.bg.info': `color-mix(in oklch, oklch(${COLORS__BLUE[900]}) 30%, transparent)`,
+
+    'surface.bg.overlay': `color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 80%, transparent)`, // Dark overlay
     'surface.bg.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'surface.bg.inverse': `oklch(${COLORS__PEARL[900]})`,
-    'icon.primary': `oklch(${COLORS__PEARL[900]})`,
-    'icon.secondary': `oklch(${COLORS__PEARL[900]})`,
-    'icon.tertiary': `oklch(${COLORS__PEARL[900]})`,
-    'icon.interactive': `oklch(${COLORS__PEARL[900]})`,
-    'icon.interactive.hover': `oklch(${COLORS__PEARL[900]})`,
-    'icon.interactive.active': `oklch(${COLORS__PEARL[900]})`,
-    'icon.success': `oklch(${COLORS__PEARL[900]})`,
-    'icon.warning': `oklch(${COLORS__PEARL[900]})`,
-    'icon.error': `oklch(${COLORS__PEARL[900]})`,
-    'icon.info': `oklch(${COLORS__PEARL[900]})`,
-    'icon.inverse': `oklch(${COLORS__PEARL[900]})`,
-    'icon.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'input.bg.default': `oklch(${COLORS__PEARL[900]})`,
-    'input.bg.hover': `oklch(${COLORS__PEARL[900]})`,
-    'input.bg.focus': `oklch(${COLORS__PEARL[900]})`,
+    'surface.bg.inverse': `oklch(${COLORS__PEARL[50]})`, // Light surface
+
+    // ICON COLORS - Interactive icons use GOLD
+    'icon.primary': `oklch(${COLORS__PEARL[200]})`, // Matches text.secondary
+    'icon.secondary': `oklch(${COLORS__PEARL[300]})`, // Matches text.tertiary
+    'icon.tertiary': `oklch(${COLORS__PEARL[400]})`, // Subtle icons
+
+    'icon.interactive': `oklch(${COLORS__GOLD[400]})`, // Gold for interactive icons
+    'icon.interactive.hover': `color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 90%, transparent)`,
+    'icon.interactive.active': `color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 80%, transparent)`,
+
+    'icon.success': `oklch(${COLORS__GREEN[400]})`,
+    'icon.warning': `oklch(${COLORS__YELLOW[400]})`,
+    'icon.error': `oklch(${COLORS__RED[400]})`,
+    'icon.info': `oklch(${COLORS__BLUE[400]})`,
+
+    'icon.inverse': `oklch(${COLORS__PEARL[700]})`, // Dark icons for light backgrounds
+    'icon.disabled': `oklch(${COLORS__PEARL[600]})`,
+
+    // INPUT COLORS
+    'input.bg.default': `oklch(${COLORS__PEARL[900]})`, // Matches secondary background
+    'input.bg.hover': `oklch(${COLORS__PEARL[800]})`,
+    'input.bg.focus': `oklch(${COLORS__PEARL[900]})`, // Keep same as default
     'input.bg.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'input.bg.error': `oklch(${COLORS__PEARL[900]})`,
-    'input.border.default': `oklch(${COLORS__PEARL[900]})`,
-    'input.border.hover': `oklch(${COLORS__PEARL[900]})`,
-    'input.border.focus': `oklch(${COLORS__PEARL[900]})`,
-    'input.border.error': `oklch(${COLORS__PEARL[900]})`,
-    'input.border.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'input.text.default': `oklch(${COLORS__PEARL[900]})`,
-    'input.text.placeholder': `oklch(${COLORS__PEARL[900]})`,
-    'input.text.disabled': `oklch(${COLORS__PEARL[900]})`,
-    'shadow.default': `oklch(${COLORS__PEARL[900]})`,
-    'shadow.subtle': `oklch(${COLORS__PEARL[900]})`,
-    'shadow.strong': `oklch(${COLORS__PEARL[900]})`,
-    'shadow.interactive': `oklch(${COLORS__PEARL[900]})`,
-    'shadow.focus': `oklch(${COLORS__PEARL[900]})`,
-    'shadow.success': `oklch(${COLORS__PEARL[900]})`,
-    'shadow.warning': `oklch(${COLORS__PEARL[900]})`,
-    'shadow.error': `oklch(${COLORS__PEARL[900]})`,
+    'input.bg.error': `color-mix(in oklch, oklch(${COLORS__RED[900]}) 20%, transparent)`,
+
+    'input.border.default': `oklch(${COLORS__PEARL[700]})`,
+    'input.border.hover': `oklch(${COLORS__PEARL[600]})`,
+    'input.border.focus': `oklch(${COLORS__GOLD[400]})`, // Gold focus
+    'input.border.error': `oklch(${COLORS__RED[400]})`,
+    'input.border.disabled': `oklch(${COLORS__PEARL[800]})`,
+
+    'input.text.default': `oklch(${COLORS__PEARL[50]})`, // High contrast light text
+    'input.text.placeholder': `oklch(${COLORS__PEARL[500]})`, // Muted
+    'input.text.disabled': `oklch(${COLORS__PEARL[600]})`,
+
+    // SHADOW COLORS - Context-aware using darker tones
+    'shadow.default': `color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 40%, transparent)`,
+    'shadow.subtle': `color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 20%, transparent)`,
+    'shadow.strong': `color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 60%, transparent)`,
+    'shadow.interactive': `color-mix(in oklch, oklch(${COLORS__GOLD[800]}) 30%, transparent)`,
+    'shadow.focus': `color-mix(in oklch, oklch(${COLORS__GOLD[700]}) 40%, transparent)`,
+    'shadow.success': `color-mix(in oklch, oklch(${COLORS__GREEN[800]}) 30%, transparent)`,
+    'shadow.warning': `color-mix(in oklch, oklch(${COLORS__YELLOW[800]}) 30%, transparent)`,
+    'shadow.error': `color-mix(in oklch, oklch(${COLORS__RED[800]}) 30%, transparent)`,
   },
   spacing: {
     0: SPACING[0],

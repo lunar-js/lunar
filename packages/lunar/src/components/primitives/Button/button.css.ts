@@ -43,14 +43,6 @@ const buttonVariants = recipe({
         outline: '2px solid transparent',
         outlineOffset: '2px',
       },
-      selectors: {
-        '& svg': {
-          pointerEvents: 'none',
-          flexShrink: 0,
-          width: '1rem',
-          height: '1rem',
-        },
-      },
     },
   ],
   variants: {
