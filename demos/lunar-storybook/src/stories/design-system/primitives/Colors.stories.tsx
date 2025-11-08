@@ -80,12 +80,14 @@ export const ByCategory: Story = {
       <div style={{ marginBottom: '48px' }}>
         <h2 style={{ marginBottom: '24px', fontSize: '24px', fontWeight: '600' }}>Neutrals</h2>
         <ColorScale colors={COLORS__STONE} name="Stone" />
+        <ColorScale colors={COLORS__PEARL} name="Pearl" />
       </div>
 
       <div style={{ marginBottom: '48px' }}>
         <h2 style={{ marginBottom: '24px', fontSize: '24px', fontWeight: '600' }}>Warm Colors</h2>
         <ColorScale colors={COLORS__RED} name="Red" />
         <ColorScale colors={COLORS__YELLOW} name="Yellow" />
+        <ColorScale colors={COLORS__GOLD} name="Gold" />
       </div>
 
       <div style={{ marginBottom: '48px' }}>
