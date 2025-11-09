@@ -2,16 +2,17 @@ import type { Preview } from '@storybook/react-vite';
 import { withThemeByClassName } from '@storybook/addon-themes';
 
 import { regalTheme, themeContract } from '@wcm/lunar/src/index.js';
-import { darkScheme, lightScheme } from './main.css.js';
+import { darkColorScheme, lightColorScheme, systemColorScheme } from './main.css.js';
 import ColorSchemeWrapper from './components/decorators/ColorSchemeWrapper.js';
 
 const preview: Preview = {
   initialGlobals: {
-    backgrounds: { value: 'light' },
+    backgrounds: { value: 'system' },
   },
   parameters: {
     backgrounds: {
       options: {
+        system: { name: 'System Settings (default)', value: themeContract.colors['surface.bg.primary'] },
         dark: { name: 'Dark', value: themeContract.colors['surface.bg.primary'] },
         light: { name: 'Light', value: themeContract.colors['surface.bg.primary'] },
       },
@@ -32,8 +33,9 @@ const preview: Preview = {
   decorators: [
     ColorSchemeWrapper({
       colorScheme: {
-        light: lightScheme,
-        dark: darkScheme,
+        light: lightColorScheme,
+        dark: darkColorScheme,
+        system: systemColorScheme,
       },
     }),
     withThemeByClassName({
