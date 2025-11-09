@@ -11,37 +11,21 @@ export {
   BUTTON_SIZE__SMALL,
 } from './components/primitives/Button/button.css.js';
 
-export { lightTheme } from './themes/light.css.js';
-export { darkTheme } from './themes/dark.css.js';
+export { regalTheme } from './themes/regal.css.js';
 export { themeContract } from './tokens/tokens.css.js';
 
 export {
   COLORS__PURE,
-  COLORS__SLATE,
   COLORS__STONE,
-  COLORS__NEUTRAL,
   COLORS__RED,
-  COLORS__BROWN,
-  COLORS__ORANGE,
-  COLORS__AMBER,
-  COLORS__YELLOW,
-  COLORS__LIME,
   COLORS__GREEN,
-  COLORS__EMERALD,
-  COLORS__TURQUOISE,
-  COLORS__TEAL,
-  COLORS__CYAN,
+  COLORS__GOLD,
+  COLORS__PEARL,
+  COLORS__YELLOW,
   COLORS__BLUE,
-  COLORS__NAVY,
-  COLORS__INDIGO,
-  COLORS__VIOLET,
-  COLORS__LAVENDER,
-  COLORS__PURPLE,
-  COLORS__FUCHSIA,
-  COLORS__PLUM,
-  COLORS__PINK,
-  COLORS__ROSE,
 } from './tokens/primitives/colors.js';
+
+export { atomic } from './styles/atomic.css.js';
 
 export { SPACING } from './tokens/primitives/spacing.js';
 export { BORDER_RADIUS, BORDER_WIDTH } from './tokens/primitives/borders.js';
