@@ -7,6 +7,7 @@ import {
   TEXT_VARIANT__SUBHEADING,
   TEXT_VARIANT__BODY,
   TEXT_VARIANT__CAPTION,
+  TEXT_VARIANT__LABEL,
   TEXT_SIZE__XL,
   TEXT_SIZE__LG,
   TEXT_SIZE__MD,
@@ -14,12 +15,16 @@ import {
   TEXT_COLOR__PRIMARY,
   TEXT_COLOR__SECONDARY,
   TEXT_COLOR__MUTED,
+  TEXT_COLOR__DISABLED,
+  TEXT_COLOR__INVERSE,
   TEXT_COLOR__INTERACTIVE,
+  TEXT_COLOR__INTERACTIVE_HOVER,
   TEXT_COLOR__SUCCESS,
   TEXT_COLOR__WARNING,
   TEXT_COLOR__DANGER,
   TEXT_COLOR__INFO,
   TEXT_COLOR__BRAND,
+  TEXT_COLOR__ACCENT,
   TEXT_WEIGHT__LIGHT,
   TEXT_WEIGHT__MEDIUM,
   TEXT_WEIGHT__BOLD,
@@ -42,6 +47,9 @@ export const DisplaySizes: Story = {
       </Text>
       <Text {...args} as="h3" variant={TEXT_VARIANT__DISPLAY} size={TEXT_SIZE__MD} weight={TEXT_WEIGHT__MEDIUM}>
         Display MD - Medium Display Text
+      </Text>
+      <Text {...args} as="h4" variant={TEXT_VARIANT__DISPLAY} size={TEXT_SIZE__SM} weight={TEXT_WEIGHT__MEDIUM}>
+        Display SM - Small Display Text
       </Text>
     </div>
   ),
@@ -66,20 +74,77 @@ export const HeadingSizes: Story = {
   ),
 };
 
+export const SubheadingSizes: Story = {
+  render: args => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxWidth: '600px' }}>
+      <Text {...args} as="h1" variant={TEXT_VARIANT__SUBHEADING} size={TEXT_SIZE__XL} weight={TEXT_WEIGHT__MEDIUM}>
+        Subheading XL - Extra large subheadings for major section divisions
+      </Text>
+      <Text {...args} as="h2" variant={TEXT_VARIANT__SUBHEADING} size={TEXT_SIZE__LG} weight={TEXT_WEIGHT__MEDIUM}>
+        Subheading LG - Large subheadings for section divisions
+      </Text>
+      <Text {...args} as="h3" variant={TEXT_VARIANT__SUBHEADING} size={TEXT_SIZE__MD} weight={TEXT_WEIGHT__MEDIUM}>
+        Subheading MD - Medium subheadings for subsections
+      </Text>
+      <Text {...args} as="h4" variant={TEXT_VARIANT__SUBHEADING} size={TEXT_SIZE__SM} weight={TEXT_WEIGHT__MEDIUM}>
+        Subheading SM - Small subheadings for minor divisions
+      </Text>
+    </div>
+  ),
+};
+
 export const BodySizes: Story = {
   render: args => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxWidth: '600px' }}>
+      <Text {...args} as="p" variant={TEXT_VARIANT__BODY} size={TEXT_SIZE__XL}>
+        Body XL - Extra large body text for prominent content and hero messaging
+      </Text>
       <Text {...args} as="p" variant={TEXT_VARIANT__BODY} size={TEXT_SIZE__LG}>
-        Body LG - Large body text for prominent content and important messaging
+        Body LG - Large body text for important content and featured messaging
       </Text>
       <Text {...args} as="p" variant={TEXT_VARIANT__BODY} size={TEXT_SIZE__MD}>
-        Body - Default body text for regular content and general reading
+        Body MD - Default body text for regular content and general reading
       </Text>
       <Text {...args} as="p" variant={TEXT_VARIANT__BODY} size={TEXT_SIZE__SM}>
         Body SM - Small body text for supporting content and detailed information
       </Text>
-      <Text {...args} as="span" variant={TEXT_VARIANT__CAPTION} size={TEXT_SIZE__SM} color={TEXT_COLOR__MUTED}>
-        Caption - For footnotes, captions, and fine print
+    </div>
+  ),
+};
+
+export const Captions: Story = {
+  render: args => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxWidth: '500px' }}>
+      <Text {...args} as="span" variant={TEXT_VARIANT__CAPTION} size={TEXT_SIZE__XL} color={TEXT_COLOR__MUTED}>
+        Figure 1: An example image showing caption usage below media content
+      </Text>
+      <Text {...args} as="small" variant={TEXT_VARIANT__CAPTION} size={TEXT_SIZE__LG} color={TEXT_COLOR__MUTED}>
+        * Required field - Please provide accurate information
+      </Text>
+      <Text {...args} as="span" variant={TEXT_VARIANT__CAPTION} size={TEXT_SIZE__MD} color={TEXT_COLOR__SECONDARY}>
+        Last updated: November 2024
+      </Text>
+      <Text {...args} as="span" variant={TEXT_VARIANT__CAPTION} size={TEXT_SIZE__SM} color={TEXT_COLOR__SUCCESS}>
+        ✓ Data successfully validated
+      </Text>
+    </div>
+  ),
+};
+
+export const Labels: Story = {
+  render: args => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', maxWidth: '400px' }}>
+      <Text {...args} as="span" variant={TEXT_VARIANT__LABEL} size={TEXT_SIZE__MD} weight={TEXT_WEIGHT__MEDIUM}>
+        Form Label - Medium
+      </Text>
+      <Text {...args} as="span" variant={TEXT_VARIANT__LABEL} size={TEXT_SIZE__SM} weight={TEXT_WEIGHT__MEDIUM}>
+        Form Label - Small
+      </Text>
+      <Text {...args} as="span" variant={TEXT_VARIANT__LABEL} size={TEXT_SIZE__SM} color={TEXT_COLOR__MUTED}>
+        Field Helper Text
+      </Text>
+      <Text {...args} as="span" variant={TEXT_VARIANT__LABEL} size={TEXT_SIZE__SM} weight={TEXT_WEIGHT__BOLD}>
+        Required Field Label *
       </Text>
     </div>
   ),
@@ -97,8 +162,19 @@ export const Colors: Story = {
       <Text {...args} as="p" color={TEXT_COLOR__MUTED}>
         Muted text color - less important content
       </Text>
+      <Text {...args} as="p" color={TEXT_COLOR__DISABLED}>
+        Disabled text color - unavailable content
+      </Text>
+      <div style={{ backgroundColor: '#1a1a1a', padding: '8px', borderRadius: '4px' }}>
+        <Text {...args} as="p" color={TEXT_COLOR__INVERSE}>
+          Inverse text color - for dark backgrounds
+        </Text>
+      </div>
       <Text {...args} as="p" color={TEXT_COLOR__INTERACTIVE}>
         Interactive text color - links and actions
+      </Text>
+      <Text {...args} as="p" color={TEXT_COLOR__INTERACTIVE_HOVER}>
+        Interactive hover text color - hovered links
       </Text>
       <Text {...args} as="p" color={TEXT_COLOR__SUCCESS}>
         Success text color - positive messages
@@ -114,6 +190,9 @@ export const Colors: Story = {
       </Text>
       <Text {...args} as="p" color={TEXT_COLOR__BRAND}>
         Brand text color - branded content
+      </Text>
+      <Text {...args} as="p" color={TEXT_COLOR__ACCENT}>
+        Accent text color - highlighted content
       </Text>
     </div>
   ),
@@ -135,76 +214,6 @@ export const Weights: Story = {
   ),
 };
 
-export const SemanticVsVisual: Story = {
-  render: args => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '600px' }}>
-      <section>
-        <Text
-          {...args}
-          as="h2"
-          variant={TEXT_VARIANT__HEADING}
-          size={TEXT_SIZE__LG}
-          weight={TEXT_WEIGHT__MEDIUM}
-          style={{ marginBottom: '0.5rem' }}
-        >
-          Semantic vs Visual Styling Examples
-        </Text>
-
-        {/* Large promotional text as semantic paragraph */}
-        <Text
-          {...args}
-          as="p"
-          variant={TEXT_VARIANT__DISPLAY}
-          size={TEXT_SIZE__MD}
-          weight={TEXT_WEIGHT__BOLD}
-          color={TEXT_COLOR__BRAND}
-          style={{ marginBottom: '1rem' }}
-        >
-          🎉 Special Offer: 50% Off Today Only!
-        </Text>
-
-        {/* Subheading that's smaller but semantically correct */}
-        <Text
-          {...args}
-          as="h3"
-          variant={TEXT_VARIANT__SUBHEADING}
-          size={TEXT_SIZE__SM}
-          weight={TEXT_WEIGHT__MEDIUM}
-          color={TEXT_COLOR__SECONDARY}
-          style={{ marginBottom: '0.5rem' }}
-        >
-          Technical Details (small heading for accessibility)
-        </Text>
-
-        {/* Body text with emphasis without changing semantics */}
-        <Text
-          {...args}
-          as="p"
-          variant={TEXT_VARIANT__BODY}
-          size={TEXT_SIZE__MD}
-          weight={TEXT_WEIGHT__BOLD}
-          color={TEXT_COLOR__INTERACTIVE}
-          style={{ marginBottom: '1rem' }}
-        >
-          This paragraph stands out visually while maintaining proper semantic meaning for screen readers.
-        </Text>
-
-        {/* Screen reader friendly but visually de-emphasized */}
-        <Text
-          {...args}
-          as="h1"
-          variant={TEXT_VARIANT__HEADING}
-          size={TEXT_SIZE__MD}
-          weight={TEXT_WEIGHT__MEDIUM}
-          color={TEXT_COLOR__MUTED}
-        >
-          Main Page Title (semantically h1, visually de-emphasized)
-        </Text>
-      </section>
-    </div>
-  ),
-};
-
 const meta = {
   title: 'Components/Primitives/Text',
   component: Text,
@@ -220,47 +229,6 @@ const meta = {
     children: {
       control: 'text',
       description: 'The text content to display',
-    },
-    as: {
-      control: { type: 'select' },
-      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'p', 'small'],
-      description: 'The HTML element to render - maintains semantic meaning',
-    },
-    variant: {
-      control: { type: 'select' },
-      options: [
-        TEXT_VARIANT__DISPLAY,
-        TEXT_VARIANT__HEADING,
-        TEXT_VARIANT__SUBHEADING,
-        TEXT_VARIANT__BODY,
-        TEXT_VARIANT__CAPTION,
-      ],
-      description: 'Text variant that defines the general purpose',
-    },
-    size: {
-      control: { type: 'select' },
-      options: [TEXT_SIZE__XL, TEXT_SIZE__LG, TEXT_SIZE__MD, TEXT_SIZE__SM],
-      description: 'Visual size variant - independent of semantic element',
-    },
-    color: {
-      control: { type: 'select' },
-      options: [
-        TEXT_COLOR__PRIMARY,
-        TEXT_COLOR__SECONDARY,
-        TEXT_COLOR__MUTED,
-        TEXT_COLOR__INTERACTIVE,
-        TEXT_COLOR__SUCCESS,
-        TEXT_COLOR__WARNING,
-        TEXT_COLOR__DANGER,
-        TEXT_COLOR__INFO,
-        TEXT_COLOR__BRAND,
-      ],
-      description: 'Text color variant',
-    },
-    weight: {
-      control: { type: 'select' },
-      options: [TEXT_WEIGHT__LIGHT, TEXT_WEIGHT__MEDIUM, TEXT_WEIGHT__BOLD],
-      description: 'Font weight variant',
     },
   },
 } satisfies Meta<typeof Text>;

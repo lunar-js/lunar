@@ -1,24 +1,33 @@
 export const FONT_FAMILY = {
-  sans: [
-    'ui-sans-serif',
-    'system-ui',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"',
-    '"Noto Color Emoji"',
-  ],
-  serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-  mono: [
-    'ui-monospace',
-    'SFMono-Regular',
-    '"Menlo"',
-    '"Monaco"',
-    '"Consolas"',
-    '"Liberation Mono"',
-    '"Courier New"',
-    'monospace',
-  ],
+  sans: {
+    primary: 'ui-sans-serif',
+    system: 'system-ui',
+    fallback: 'sans-serif',
+    emoji: {
+      apple: '"Apple Color Emoji"',
+      segoeUI: '"Segoe UI Emoji"',
+      segoeSymbol: '"Segoe UI Symbol"',
+      noto: '"Noto Color Emoji"',
+    },
+  },
+  serif: {
+    primary: 'ui-serif',
+    georgia: 'Georgia',
+    cambria: 'Cambria',
+    timesNewRoman: '"Times New Roman"',
+    times: 'Times',
+    fallback: 'serif',
+  },
+  mono: {
+    primary: 'ui-monospace',
+    sfMono: 'SFMono-Regular',
+    menlo: '"Menlo"',
+    monaco: '"Monaco"',
+    consolas: '"Consolas"',
+    liberation: '"Liberation Mono"',
+    courierNew: '"Courier New"',
+    fallback: 'monospace',
+  },
 } as const;
 
 export const FONT_SIZE = {

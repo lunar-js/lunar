@@ -13,136 +13,154 @@ import {
 import { SPACING } from '../tokens/primitives/spacing.js';
 import { BORDER_RADIUS, BORDER_WIDTH } from '../tokens/primitives/borders.js';
 import { BOX_SHADOW } from '../tokens/primitives/shadows.js';
+import { FONT_FAMILY, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, LETTER_SPACING } from '../tokens/primitives/typography.js';
 
 const regalThemeVars = createTheme(themeContract, {
   colors: {
-    // ACTION COLORS - Primary uses GOLD (brand), Secondary uses GOLD border, Destructive uses RED
-    'action.bg.primary': `light-dark(oklch(${COLORS__GOLD[300]}), oklch(${COLORS__GOLD[300]}))`, // Gold background (same for both)
-    'action.color.primary': `light-dark(oklch(${COLORS__PEARL[950]}), oklch(${COLORS__PEARL[950]}))`,
-    'action.bg.primary.hover': `light-dark(oklch(${COLORS__GOLD[300]} / 0.9), oklch(${COLORS__GOLD[300]} / 0.9))`,
-    'action.bg.primary.active': `light-dark(oklch(${COLORS__GOLD[300]} / 0.8), oklch(${COLORS__GOLD[300]} / 0.8))`,
-    'action.bg.primary.disabled': `light-dark(oklch(${COLORS__GOLD[300]} / 0.4), oklch(${COLORS__GOLD[300]} / 0.4))`,
-
-    'action.bg.secondary': `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`, // Gold background (same for both)
-    'action.bg.secondary.hover': `light-dark(oklch(${COLORS__PEARL[400]} / 0.9), oklch(${COLORS__PEARL[600]} / 0.9))`, // Gold background (same for both)
-    'action.bg.secondary.active': `light-dark(oklch(${COLORS__PEARL[400]} / 0.8), oklch(${COLORS__PEARL[600]} / 0.8))`, // Gold background (same for both)
-    'action.bg.secondary.disabled': `light-dark(oklch(${COLORS__PEARL[400]} / 0.4), oklch(${COLORS__PEARL[600]} / 0.4))`,
-
-    'action.bg.outline': `light-dark(oklch(${COLORS__PEARL[400]} / 0.0125), oklch(${COLORS__PEARL[700]} / 0.0125))`,
-    'action.bg.outline.hover': `light-dark(oklch(${COLORS__PEARL[400]} / 0.3), oklch(${COLORS__PEARL[700]} / 0.3))`,
-    'action.bg.outline.active': `light-dark(oklch(${COLORS__PEARL[400]} / 0.05), oklch(${COLORS__PEARL[700]} / 0.05))`,
-    'action.bg.outline.disabled': `light-dark(oklch(${COLORS__PEARL[400]} / 0.025), oklch(${COLORS__PEARL[700]} / 0.025))`,
-    'action.color.outline.disabled': `light-dark(oklch(${COLORS__PEARL[400]} / 0.4), oklch(${COLORS__PEARL[700]} / 0.4))`,
-
-    'action.destructive': `light-dark(oklch(${COLORS__RED[600]}), oklch(${COLORS__RED[400]}))`, // Same red for both
-    'action.destructive.hover': `light-dark(oklch(${COLORS__RED[600]} / 0.9), oklch(${COLORS__RED[300]} / 0.9))`, // Same red for both
-    'action.destructive.active': `light-dark(oklch(${COLORS__RED[600]} / 0.8), oklch(${COLORS__RED[300]} / 0.8))`, // Same red for both
-    'action.destructive.disabled': `light-dark(oklch(${COLORS__RED[600]} / 0.4), oklch(${COLORS__RED[300]} / 0.4))`, // Same red for both
-
-    'action.ghost': `light-dark(${COLORS__PURE.transparent}, ${COLORS__PURE.transparent})`, // Transparent background for both
-    'action.ghost.hover': `light-dark(oklch(${COLORS__GOLD[300]} / 0.5), oklch(${COLORS__GOLD[300]} / 0.5))`, // Transparent background for both
-    'action.ghost.active': `light-dark(oklch(${COLORS__GOLD[300]} / 0.6), oklch(${COLORS__GOLD[300]} / 0.6))`, // Transparent background for both
-    'action.ghost.disabled': `light-dark(transparent, transparent)`, // Transparent for both
-
-    // BORDER COLORS - Interactive borders use GOLD
-    'border.default': `light-dark(oklch(${COLORS__PEARL[300]}), oklch(${COLORS__PEARL[700]}))`, // Light vs dark neutral border
-    'border.subtle': `light-dark(oklch(${COLORS__PEARL[200]}), oklch(${COLORS__PEARL[800]}))`, // Light vs dark subtle border
-    'border.strong': `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`, // Light vs dark strong border
-
-    'border.interactive': `light-dark(oklch(${COLORS__PEARL[900]} / 0.9), oklch(${COLORS__PEARL[400]}))`, // Gold 500 vs lighter gold for dark theme
-    'border.interactive.hover': `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[400]} / 0.9))`, // Gold 500 vs lighter gold for dark theme
-    'border.interactive.active': `light-dark(oklch(${COLORS__PEARL[900]} / 0.8), oklch(${COLORS__PEARL[400]} / 0.8))`, // Gold 500 vs lighter gold for dark theme
-    'border.focus': `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[400]}))`, // Gold focus ring
-
-    'border.success': `light-dark(oklch(${COLORS__GREEN[500]}), oklch(${COLORS__GREEN[400]}))`, // Lighter for dark theme
-    'border.warning': `light-dark(oklch(${COLORS__YELLOW[500]}), oklch(${COLORS__YELLOW[400]}))`,
-    'border.error': `light-dark(oklch(${COLORS__RED[500]}), oklch(${COLORS__RED[400]}))`,
-    'border.info': `light-dark(oklch(${COLORS__BLUE[500]}), oklch(${COLORS__BLUE[400]}))`,
-
-    'border.action.primary': `light-dark(oklch(${COLORS__GOLD[500]}), oklch(${COLORS__GOLD[400]}))`, // Matches primary action
-    'border.action.secondary': `light-dark(oklch(${COLORS__GOLD[500]}), oklch(${COLORS__GOLD[400]}))`, // Gold border for secondary
-    'border.action.destructive': `light-dark(oklch(${COLORS__RED[500]}), oklch(${COLORS__RED[400]}))`,
-    'border.action.disabled': `light-dark(oklch(${COLORS__GOLD[300]} / 0.4), oklch(${COLORS__GOLD[300]} / 0.4))`,
-
-    // TEXT COLORS - Primary hierarchy uses PEARL, Interactive uses GOLD
-    'text.primary': `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[50]}))`, // High contrast dark vs light text
-    'text.secondary': `light-dark(oklch(${COLORS__PEARL[700]}), oklch(${COLORS__PEARL[200]}))`, // Medium contrast text
-    'text.tertiary': `light-dark(oklch(${COLORS__PEARL[600]}), oklch(${COLORS__PEARL[300]}))`, // Low contrast text
-
-    'text.interactive': `light-dark(oklch(${COLORS__PEARL[900]} / 0.9), oklch(${COLORS__PEARL[300]}))`, // Gold for links - lighter for dark theme
-    'text.interactive.hover': `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[300]} / 0.9))`, // Gold for links - lighter for dark theme
-    'text.interactive.active': `light-dark(oklch(${COLORS__PEARL[900]} / 0.8), oklch(${COLORS__PEARL[300]} / 0.9))`, // Gold for links - lighter for dark theme
-
-    'text.success': `light-dark(oklch(${COLORS__GREEN[700]}), oklch(${COLORS__GREEN[300]}))`, // Darker vs lighter for contrast
-    'text.warning': `light-dark(oklch(${COLORS__YELLOW[700]}), oklch(${COLORS__YELLOW[300]}))`,
-    'text.error': `light-dark(oklch(${COLORS__RED[700]}), oklch(${COLORS__RED[300]}))`,
-    'text.info': `light-dark(oklch(${COLORS__BLUE[700]}), oklch(${COLORS__BLUE[300]}))`,
-
-    'text.inverse': `light-dark(oklch(${COLORS__PEARL[50]}), oklch(${COLORS__PEARL[950]}))`, // Light vs dark for inverse backgrounds
-    'text.disabled': `light-dark(oklch(${COLORS__PEARL[500]}), oklch(${COLORS__PEARL[500]}))`, // Same muted text for both
-
-    // SURFACE COLORS - Layered hierarchy with PEARL
-    'surface.bg.primary': `light-dark(oklch(${COLORS__PEARL[50]}), oklch(${COLORS__PEARL[900]}))`, // Main background - lightest vs darkest
-    'surface.bg.secondary': `light-dark(oklch(${COLORS__PEARL[100]}), oklch(${COLORS__PEARL[800]}))`, // Cards, panels
-    'surface.bg.tertiary': `light-dark(oklch(${COLORS__PEARL[200]}), oklch(${COLORS__PEARL[700]}))`, // Elevated surfaces
-
-    'surface.bg.interactive': `light-dark(transparent, transparent)`, // Interactive surface base
-    'surface.bg.interactive.hover': `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[50]}) 30%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[800]}) 20%, transparent))`,
-    'surface.bg.interactive.active': `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[100]}) 40%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[700]}) 30%, transparent))`,
-
-    'surface.bg.success': `light-dark(color-mix(in oklch, oklch(${COLORS__GREEN[50]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__GREEN[900]}) 30%, transparent))`,
-    'surface.bg.warning': `light-dark(color-mix(in oklch, oklch(${COLORS__YELLOW[50]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__YELLOW[900]}) 30%, transparent))`,
-    'surface.bg.error': `light-dark(color-mix(in oklch, oklch(${COLORS__RED[50]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__RED[900]}) 30%, transparent))`,
-    'surface.bg.info': `light-dark(color-mix(in oklch, oklch(${COLORS__BLUE[50]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__BLUE[900]}) 30%, transparent))`,
-
-    'surface.bg.overlay': `light-dark(color-mix(in oklch, oklch(${COLORS__PEARL[900]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 80%, transparent))`, // Dark overlay
-    'surface.bg.disabled': `light-dark(oklch(${COLORS__PEARL[100]}), oklch(${COLORS__PEARL[900]}))`,
-    'surface.bg.inverse': `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[50]}))`, // Dark vs light surface
-
-    // ICON COLORS - Interactive icons use GOLD
-    'icon.primary': `light-dark(oklch(${COLORS__PEARL[700]}), oklch(${COLORS__PEARL[200]}))`, // Matches text.secondary
-    'icon.secondary': `light-dark(oklch(${COLORS__PEARL[600]}), oklch(${COLORS__PEARL[300]}))`, // Matches text.tertiary
-    'icon.tertiary': `light-dark(oklch(${COLORS__PEARL[500]}), oklch(${COLORS__PEARL[400]}))`, // Subtle icons
-
-    'icon.interactive': `light-dark(oklch(${COLORS__GOLD[600]}), oklch(${COLORS__GOLD[400]}))`, // Gold for interactive icons
-    'icon.interactive.hover': `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[600]}) 90%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 90%, transparent))`,
-    'icon.interactive.active': `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[600]}) 80%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 80%, transparent))`,
-
-    'icon.success': `light-dark(oklch(${COLORS__GREEN[600]}), oklch(${COLORS__GREEN[400]}))`,
-    'icon.warning': `light-dark(oklch(${COLORS__YELLOW[600]}), oklch(${COLORS__YELLOW[400]}))`,
-    'icon.error': `light-dark(oklch(${COLORS__RED[600]}), oklch(${COLORS__RED[400]}))`,
-    'icon.info': `light-dark(oklch(${COLORS__BLUE[600]}), oklch(${COLORS__BLUE[400]}))`,
-
-    'icon.inverse': `light-dark(oklch(${COLORS__PEARL[200]}), oklch(${COLORS__PEARL[700]}))`, // Light vs dark icons for inverse backgrounds
-    'icon.disabled': `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`,
-
-    // INPUT COLORS
-    'input.bg.default': `light-dark(oklch(${COLORS__PEARL[50]}), oklch(${COLORS__PEARL[900]}))`, // Matches primary vs secondary background
-    'input.bg.hover': `light-dark(oklch(${COLORS__PEARL[100]}), oklch(${COLORS__PEARL[800]}))`,
-    'input.bg.focus': `light-dark(oklch(${COLORS__PEARL[50]}), oklch(${COLORS__PEARL[900]}))`, // Keep same as default
-    'input.bg.disabled': `light-dark(oklch(${COLORS__PEARL[100]}), oklch(${COLORS__PEARL[900]}))`,
-    'input.bg.error': `light-dark(color-mix(in oklch, oklch(${COLORS__RED[50]}) 30%, transparent), color-mix(in oklch, oklch(${COLORS__RED[900]}) 20%, transparent))`,
-
-    'input.border.default': `light-dark(oklch(${COLORS__PEARL[300]}), oklch(${COLORS__PEARL[700]}))`,
-    'input.border.hover': `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`,
-    'input.border.focus': `light-dark(oklch(${COLORS__GOLD[500]}), oklch(${COLORS__GOLD[400]}))`, // Gold focus
-    'input.border.error': `light-dark(oklch(${COLORS__RED[500]}), oklch(${COLORS__RED[400]}))`,
-    'input.border.disabled': `light-dark(oklch(${COLORS__PEARL[200]}), oklch(${COLORS__PEARL[800]}))`,
-
-    'input.text.default': `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[50]}))`, // High contrast
-    'input.text.placeholder': `light-dark(oklch(${COLORS__PEARL[500]}), oklch(${COLORS__PEARL[500]}))`, // Same muted for both
-    'input.text.disabled': `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`,
-
-    // SHADOW COLORS - Context-aware using PEARL
-    'shadow.default': `light-dark(color-mix(in oklch, oklch(${COLORS__PEARL[900]}) 15%, transparent), color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 40%, transparent))`,
-    'shadow.subtle': `light-dark(color-mix(in oklch, oklch(${COLORS__PEARL[900]}) 8%, transparent), color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 20%, transparent))`,
-    'shadow.strong': `light-dark(color-mix(in oklch, oklch(${COLORS__PEARL[900]}) 25%, transparent), color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 60%, transparent))`,
-    'shadow.interactive': `light-dark(oklch(${COLORS__GOLD[600]} / 0.4), oklch(${COLORS__GOLD[200]} / 0.4))`, // Same red for both
-    'shadow.destructive': `light-dark(oklch(${COLORS__RED[600]} / 0.4), oklch(${COLORS__RED[400]} / 0.4))`, // Same red for both
-    'shadow.focus': `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[500]}) 25%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[700]}) 40%, transparent))`,
-    'shadow.success': `light-dark(color-mix(in oklch, oklch(${COLORS__GREEN[500]}) 20%, transparent), color-mix(in oklch, oklch(${COLORS__GREEN[800]}) 30%, transparent))`,
-    'shadow.warning': `light-dark(color-mix(in oklch, oklch(${COLORS__YELLOW[500]}) 20%, transparent), color-mix(in oklch, oklch(${COLORS__YELLOW[800]}) 30%, transparent))`,
-    'shadow.error': `light-dark(color-mix(in oklch, oklch(${COLORS__RED[500]}) 20%, transparent), color-mix(in oklch, oklch(${COLORS__RED[800]}) 30%, transparent))`,
+    action: {
+      bg: {
+        primary: {
+          default: `light-dark(oklch(${COLORS__GOLD[300]}), oklch(${COLORS__GOLD[300]}))`, // Gold background (same for both)
+          hover: `light-dark(oklch(${COLORS__GOLD[300]} / 0.9), oklch(${COLORS__GOLD[300]} / 0.9))`,
+          active: `light-dark(oklch(${COLORS__GOLD[300]} / 0.8), oklch(${COLORS__GOLD[300]} / 0.8))`,
+          disabled: `light-dark(oklch(${COLORS__GOLD[300]} / 0.4), oklch(${COLORS__GOLD[300]} / 0.4))`,
+        },
+        secondary: {
+          default: `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`, // Gold background (same for both)
+          hover: `light-dark(oklch(${COLORS__PEARL[400]} / 0.9), oklch(${COLORS__PEARL[600]} / 0.9))`, // Gold background (same for both)
+          active: `light-dark(oklch(${COLORS__PEARL[400]} / 0.8), oklch(${COLORS__PEARL[600]} / 0.8))`, // Gold background (same for both)
+          disabled: `light-dark(oklch(${COLORS__PEARL[400]} / 0.4), oklch(${COLORS__PEARL[600]} / 0.4))`,
+        },
+        outline: {
+          default: `light-dark(oklch(${COLORS__PEARL[400]} / 0.0125), oklch(${COLORS__PEARL[700]} / 0.0125))`,
+          hover: `light-dark(oklch(${COLORS__PEARL[400]} / 0.3), oklch(${COLORS__PEARL[700]} / 0.3))`,
+          active: `light-dark(oklch(${COLORS__PEARL[400]} / 0.05), oklch(${COLORS__PEARL[700]} / 0.05))`,
+          disabled: `light-dark(oklch(${COLORS__PEARL[400]} / 0.025), oklch(${COLORS__PEARL[700]} / 0.025))`,
+        },
+      },
+      color: {
+        primary: `light-dark(oklch(${COLORS__PEARL[950]}), oklch(${COLORS__PEARL[950]}))`,
+        outline: {
+          disabled: `light-dark(oklch(${COLORS__PEARL[400]} / 0.4), oklch(${COLORS__PEARL[700]} / 0.4))`,
+        },
+      },
+      destructive: {
+        default: `light-dark(oklch(${COLORS__RED[600]}), oklch(${COLORS__RED[400]}))`, // Same red for both
+        hover: `light-dark(oklch(${COLORS__RED[600]} / 0.9), oklch(${COLORS__RED[300]} / 0.9))`, // Same red for both
+        active: `light-dark(oklch(${COLORS__RED[600]} / 0.8), oklch(${COLORS__RED[300]} / 0.8))`, // Same red for both
+        disabled: `light-dark(oklch(${COLORS__RED[600]} / 0.4), oklch(${COLORS__RED[300]} / 0.4))`, // Same red for both
+      },
+      ghost: {
+        default: `light-dark(${COLORS__PURE.transparent}, ${COLORS__PURE.transparent})`, // Transparent background for both
+        hover: `light-dark(oklch(${COLORS__GOLD[300]} / 0.5), oklch(${COLORS__GOLD[300]} / 0.5))`, // Transparent background for both
+        active: `light-dark(oklch(${COLORS__GOLD[300]} / 0.6), oklch(${COLORS__GOLD[300]} / 0.6))`, // Transparent background for both
+        disabled: `light-dark(transparent, transparent)`, // Transparent for both
+      },
+    },
+    border: {
+      default: `light-dark(oklch(${COLORS__PEARL[300]}), oklch(${COLORS__PEARL[700]}))`, // Light vs dark neutral border
+      subtle: `light-dark(oklch(${COLORS__PEARL[200]}), oklch(${COLORS__PEARL[800]}))`, // Light vs dark subtle border
+      strong: `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`, // Light vs dark strong border
+      interactive: {
+        default: `light-dark(oklch(${COLORS__PEARL[900]} / 0.9), oklch(${COLORS__PEARL[400]}))`, // Gold 500 vs lighter gold for dark theme
+        hover: `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[400]} / 0.9))`, // Gold 500 vs lighter gold for dark theme
+        active: `light-dark(oklch(${COLORS__PEARL[900]} / 0.8), oklch(${COLORS__PEARL[400]} / 0.8))`, // Gold 500 vs lighter gold for dark theme
+      },
+      focus: `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[400]}))`, // Gold focus ring
+      success: `light-dark(oklch(${COLORS__GREEN[500]}), oklch(${COLORS__GREEN[400]}))`, // Lighter for dark theme
+      warning: `light-dark(oklch(${COLORS__YELLOW[500]}), oklch(${COLORS__YELLOW[400]}))`,
+      error: `light-dark(oklch(${COLORS__RED[500]}), oklch(${COLORS__RED[400]}))`,
+      info: `light-dark(oklch(${COLORS__BLUE[500]}), oklch(${COLORS__BLUE[400]}))`,
+      action: {
+        primary: `light-dark(oklch(${COLORS__GOLD[500]}), oklch(${COLORS__GOLD[400]}))`, // Matches primary action
+        secondary: `light-dark(oklch(${COLORS__GOLD[500]}), oklch(${COLORS__GOLD[400]}))`, // Gold border for secondary
+        destructive: `light-dark(oklch(${COLORS__RED[500]}), oklch(${COLORS__RED[400]}))`,
+        disabled: `light-dark(oklch(${COLORS__GOLD[300]} / 0.4), oklch(${COLORS__GOLD[300]} / 0.4))`,
+      },
+    },
+    text: {
+      primary: `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[50]}))`, // High contrast dark vs light text
+      secondary: `light-dark(oklch(${COLORS__PEARL[700]}), oklch(${COLORS__PEARL[200]}))`, // Medium contrast text
+      tertiary: `light-dark(oklch(${COLORS__PEARL[600]}), oklch(${COLORS__PEARL[300]}))`, // Low contrast text
+      interactive: {
+        default: `light-dark(oklch(${COLORS__PEARL[900]} / 0.9), oklch(${COLORS__PEARL[300]}))`, // Gold for links - lighter for dark theme
+        hover: `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[300]} / 0.9))`, // Gold for links - lighter for dark theme
+        active: `light-dark(oklch(${COLORS__PEARL[900]} / 0.8), oklch(${COLORS__PEARL[300]} / 0.9))`, // Gold for links - lighter for dark theme
+      },
+      success: `light-dark(oklch(${COLORS__GREEN[700]}), oklch(${COLORS__GREEN[300]}))`, // Darker vs lighter for contrast
+      warning: `light-dark(oklch(${COLORS__YELLOW[700]}), oklch(${COLORS__YELLOW[300]}))`,
+      error: `light-dark(oklch(${COLORS__RED[700]}), oklch(${COLORS__RED[300]}))`,
+      info: `light-dark(oklch(${COLORS__BLUE[700]}), oklch(${COLORS__BLUE[300]}))`,
+      inverse: `light-dark(oklch(${COLORS__PEARL[50]}), oklch(${COLORS__PEARL[950]}))`, // Light vs dark for inverse backgrounds
+      disabled: `light-dark(oklch(${COLORS__PEARL[500]}), oklch(${COLORS__PEARL[500]}))`, // Same muted text for both
+    },
+    surface: {
+      bg: {
+        primary: `light-dark(oklch(${COLORS__PEARL[50]}), oklch(${COLORS__PEARL[900]}))`, // Main background - lightest vs darkest
+        secondary: `light-dark(oklch(${COLORS__PEARL[100]}), oklch(${COLORS__PEARL[800]}))`, // Cards, panels
+        tertiary: `light-dark(oklch(${COLORS__PEARL[200]}), oklch(${COLORS__PEARL[700]}))`, // Elevated surfaces
+        interactive: {
+          default: `light-dark(transparent, transparent)`, // Interactive surface base
+          hover: `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[50]}) 30%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[800]}) 20%, transparent))`,
+          active: `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[100]}) 40%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[700]}) 30%, transparent))`,
+        },
+        success: `light-dark(color-mix(in oklch, oklch(${COLORS__GREEN[50]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__GREEN[900]}) 30%, transparent))`,
+        warning: `light-dark(color-mix(in oklch, oklch(${COLORS__YELLOW[50]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__YELLOW[900]}) 30%, transparent))`,
+        error: `light-dark(color-mix(in oklch, oklch(${COLORS__RED[50]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__RED[900]}) 30%, transparent))`,
+        info: `light-dark(color-mix(in oklch, oklch(${COLORS__BLUE[50]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__BLUE[900]}) 30%, transparent))`,
+        overlay: `light-dark(color-mix(in oklch, oklch(${COLORS__PEARL[900]}) 50%, transparent), color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 80%, transparent))`, // Dark overlay
+        disabled: `light-dark(oklch(${COLORS__PEARL[100]}), oklch(${COLORS__PEARL[900]}))`,
+        inverse: `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[50]}))`, // Dark vs light surface
+      },
+    },
+    icon: {
+      primary: `light-dark(oklch(${COLORS__PEARL[700]}), oklch(${COLORS__PEARL[200]}))`, // Matches text.secondary
+      secondary: `light-dark(oklch(${COLORS__PEARL[600]}), oklch(${COLORS__PEARL[300]}))`, // Matches text.tertiary
+      tertiary: `light-dark(oklch(${COLORS__PEARL[500]}), oklch(${COLORS__PEARL[400]}))`, // Subtle icons
+      interactive: {
+        default: `light-dark(oklch(${COLORS__GOLD[600]}), oklch(${COLORS__GOLD[400]}))`, // Gold for interactive icons
+        hover: `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[600]}) 90%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 90%, transparent))`,
+        active: `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[600]}) 80%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[400]}) 80%, transparent))`,
+      },
+      success: `light-dark(oklch(${COLORS__GREEN[600]}), oklch(${COLORS__GREEN[400]}))`,
+      warning: `light-dark(oklch(${COLORS__YELLOW[600]}), oklch(${COLORS__YELLOW[400]}))`,
+      error: `light-dark(oklch(${COLORS__RED[600]}), oklch(${COLORS__RED[400]}))`,
+      info: `light-dark(oklch(${COLORS__BLUE[600]}), oklch(${COLORS__BLUE[400]}))`,
+      inverse: `light-dark(oklch(${COLORS__PEARL[200]}), oklch(${COLORS__PEARL[700]}))`, // Light vs dark icons for inverse backgrounds
+      disabled: `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`,
+    },
+    input: {
+      bg: {
+        default: `light-dark(oklch(${COLORS__PEARL[50]}), oklch(${COLORS__PEARL[900]}))`, // Matches primary vs secondary background
+        hover: `light-dark(oklch(${COLORS__PEARL[100]}), oklch(${COLORS__PEARL[800]}))`,
+        focus: `light-dark(oklch(${COLORS__PEARL[50]}), oklch(${COLORS__PEARL[900]}))`, // Keep same as default
+        disabled: `light-dark(oklch(${COLORS__PEARL[100]}), oklch(${COLORS__PEARL[900]}))`,
+        error: `light-dark(color-mix(in oklch, oklch(${COLORS__RED[50]}) 30%, transparent), color-mix(in oklch, oklch(${COLORS__RED[900]}) 20%, transparent))`,
+      },
+      border: {
+        default: `light-dark(oklch(${COLORS__PEARL[300]}), oklch(${COLORS__PEARL[700]}))`,
+        hover: `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`,
+        focus: `light-dark(oklch(${COLORS__GOLD[500]}), oklch(${COLORS__GOLD[400]}))`, // Gold focus
+        error: `light-dark(oklch(${COLORS__RED[500]}), oklch(${COLORS__RED[400]}))`,
+        disabled: `light-dark(oklch(${COLORS__PEARL[200]}), oklch(${COLORS__PEARL[800]}))`,
+      },
+      text: {
+        default: `light-dark(oklch(${COLORS__PEARL[900]}), oklch(${COLORS__PEARL[50]}))`, // High contrast
+        placeholder: `light-dark(oklch(${COLORS__PEARL[500]}), oklch(${COLORS__PEARL[500]}))`, // Same muted for both
+        disabled: `light-dark(oklch(${COLORS__PEARL[400]}), oklch(${COLORS__PEARL[600]}))`,
+      },
+    },
+    shadow: {
+      default: `light-dark(color-mix(in oklch, oklch(${COLORS__PEARL[900]}) 15%, transparent), color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 40%, transparent))`,
+      subtle: `light-dark(color-mix(in oklch, oklch(${COLORS__PEARL[900]}) 8%, transparent), color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 20%, transparent))`,
+      strong: `light-dark(color-mix(in oklch, oklch(${COLORS__PEARL[900]}) 25%, transparent), color-mix(in oklch, oklch(${COLORS__PEARL[950]}) 60%, transparent))`,
+      interactive: `light-dark(oklch(${COLORS__GOLD[600]} / 0.4), oklch(${COLORS__GOLD[200]} / 0.4))`, // Same red for both
+      destructive: `light-dark(oklch(${COLORS__RED[600]} / 0.4), oklch(${COLORS__RED[400]} / 0.4))`, // Same red for both
+      focus: `light-dark(color-mix(in oklch, oklch(${COLORS__GOLD[500]}) 25%, transparent), color-mix(in oklch, oklch(${COLORS__GOLD[700]}) 40%, transparent))`,
+      success: `light-dark(color-mix(in oklch, oklch(${COLORS__GREEN[500]}) 20%, transparent), color-mix(in oklch, oklch(${COLORS__GREEN[800]}) 30%, transparent))`,
+      warning: `light-dark(color-mix(in oklch, oklch(${COLORS__YELLOW[500]}) 20%, transparent), color-mix(in oklch, oklch(${COLORS__YELLOW[800]}) 30%, transparent))`,
+      error: `light-dark(color-mix(in oklch, oklch(${COLORS__RED[500]}) 20%, transparent), color-mix(in oklch, oklch(${COLORS__RED[800]}) 30%, transparent))`,
+    },
   },
   spacing: {
     0: SPACING[0],
@@ -211,497 +229,497 @@ const regalThemeVars = createTheme(themeContract, {
   },
   typography: {
     fontFamily: {
-      base: 'Inter',
+      base: FONT_FAMILY.mono.primary,
     },
     display: {
       xl: {
         light: {
-          fontWeight: '300',
-          fontSize: '4.5rem', // 72px
-          lineHeight: '1.1',
-          letterSpacing: '-0.02em',
+          fontWeight: FONT_WEIGHT.extralight,
+          fontSize: FONT_SIZE['7xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '4.5rem', // 72px
-          lineHeight: '1.1',
-          letterSpacing: '-0.02em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE['7xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '4.5rem', // 72px
-          lineHeight: '1.1',
-          letterSpacing: '-0.02em',
+          fontWeight: FONT_WEIGHT.extrabold,
+          fontSize: FONT_SIZE['7xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
       },
       lg: {
         light: {
-          fontWeight: '300',
-          fontSize: '3.75rem', // 60px
-          lineHeight: '1.15',
-          letterSpacing: '-0.015em',
+          fontWeight: FONT_WEIGHT.extralight,
+          fontSize: FONT_SIZE['6xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '3.75rem', // 60px
-          lineHeight: '1.15',
-          letterSpacing: '-0.015em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE['6xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '3.75rem', // 60px
-          lineHeight: '1.15',
-          letterSpacing: '-0.015em',
+          fontWeight: FONT_WEIGHT.extrabold,
+          fontSize: FONT_SIZE['6xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
       },
       md: {
         light: {
-          fontWeight: '300',
-          fontSize: '3rem', // 48px
-          lineHeight: '1.2',
-          letterSpacing: '-0.01em',
+          fontWeight: FONT_WEIGHT.extralight,
+          fontSize: FONT_SIZE['5xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '3rem', // 48px
-          lineHeight: '1.2',
-          letterSpacing: '-0.01em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE['5xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '3rem', // 48px
-          lineHeight: '1.2',
-          letterSpacing: '-0.01em',
+          fontWeight: FONT_WEIGHT.extrabold,
+          fontSize: FONT_SIZE['5xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
       },
       sm: {
         light: {
-          fontWeight: '300',
-          fontSize: '2.25rem', // 36px
-          lineHeight: '1.25',
-          letterSpacing: '-0.005em',
+          fontWeight: FONT_WEIGHT.extralight,
+          fontSize: FONT_SIZE['4xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '2.25rem', // 36px
-          lineHeight: '1.25',
-          letterSpacing: '-0.005em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE['4xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '2.25rem', // 36px
-          lineHeight: '1.25',
-          letterSpacing: '-0.005em',
+          fontWeight: FONT_WEIGHT.extrabold,
+          fontSize: FONT_SIZE['4xl'],
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.tight,
         },
       },
     },
     heading: {
       xl: {
         light: {
-          fontWeight: '300',
-          fontSize: '2rem', // 32px
-          lineHeight: '1.3',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE['3xl'],
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '2rem', // 32px
-          lineHeight: '1.3',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE['3xl'],
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '2rem', // 32px
-          lineHeight: '1.3',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZE['3xl'],
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
       },
       lg: {
         light: {
-          fontWeight: '300',
-          fontSize: '1.75rem', // 28px
-          lineHeight: '1.35',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE['2xl'],
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '1.75rem', // 28px
-          lineHeight: '1.35',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE['2xl'],
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '1.75rem', // 28px
-          lineHeight: '1.35',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZE['2xl'],
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
       },
       md: {
         light: {
-          fontWeight: '300',
-          fontSize: '1.5rem', // 24px
-          lineHeight: '1.4',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.xl,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '1.5rem', // 24px
-          lineHeight: '1.4',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.xl,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '1.5rem', // 24px
-          lineHeight: '1.4',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZE.xl,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
       },
       sm: {
         light: {
-          fontWeight: '300',
-          fontSize: '1.25rem', // 20px
-          lineHeight: '1.45',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '1.25rem', // 20px
-          lineHeight: '1.45',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '1.25rem', // 20px
-          lineHeight: '1.45',
-          letterSpacing: '0em',
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.normal,
         },
       },
     },
     subheading: {
       xl: {
         light: {
-          fontWeight: '300',
-          fontSize: '1.125rem', // 18px
-          lineHeight: '1.5',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '1.125rem', // 18px
-          lineHeight: '1.5',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '1.125rem', // 18px
-          lineHeight: '1.5',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wide,
         },
       },
       lg: {
         light: {
-          fontWeight: '300',
-          fontSize: '1rem', // 16px
-          lineHeight: '1.5',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.base,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '1rem', // 16px
-          lineHeight: '1.5',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.base,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '1rem', // 16px
-          lineHeight: '1.5',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZE.base,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wide,
         },
       },
       md: {
         light: {
-          fontWeight: '300',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.55',
-          letterSpacing: '0.01em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.55',
-          letterSpacing: '0.01em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.55',
-          letterSpacing: '0.01em',
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
       },
       sm: {
         light: {
-          fontWeight: '300',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.6',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.6',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.6',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.bold,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
       },
     },
     body: {
       xl: {
         light: {
-          fontWeight: '300',
-          fontSize: '1.125rem', // 18px
-          lineHeight: '1.6',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '1.125rem', // 18px
-          lineHeight: '1.6',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
-          fontWeight: '600',
-          fontSize: '1.125rem', // 18px
-          lineHeight: '1.6',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: FONT_SIZE.lg,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
       },
       lg: {
         light: {
-          fontWeight: '300',
-          fontSize: '1rem', // 16px
-          lineHeight: '1.6',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.base,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '1rem', // 16px
-          lineHeight: '1.6',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE.base,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
-          fontWeight: '600',
-          fontSize: '1rem', // 16px
-          lineHeight: '1.6',
-          letterSpacing: '0.005em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: FONT_SIZE.base,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wide,
         },
       },
       md: {
         light: {
-          fontWeight: '300',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.65',
-          letterSpacing: '0.01em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.65',
-          letterSpacing: '0.01em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
-          fontWeight: '600',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.65',
-          letterSpacing: '0.01em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
       },
       sm: {
         light: {
-          fontWeight: '300',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.65',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.light,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.65',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
-          fontWeight: '600',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.65',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.relaxed,
+          letterSpacing: LETTER_SPACING.wider,
         },
       },
     },
     caption: {
       xl: {
         light: {
-          fontWeight: '300',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.5',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.5',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
-          fontWeight: '600',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.5',
-          letterSpacing: '0.015em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wider,
         },
       },
       lg: {
         light: {
-          fontWeight: '300',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.5',
-          letterSpacing: '0.02em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.5',
-          letterSpacing: '0.02em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
-          fontWeight: '600',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.5',
-          letterSpacing: '0.02em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.normal,
+          letterSpacing: LETTER_SPACING.wider,
         },
       },
       md: {
         light: {
-          fontWeight: '300',
-          fontSize: '0.6875rem', // 11px
-          lineHeight: '1.45',
-          letterSpacing: '0.025em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: '0.6875rem', // 11px - Not available in primitives
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.widest,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '0.6875rem', // 11px
-          lineHeight: '1.45',
-          letterSpacing: '0.025em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: '0.6875rem', // 11px - Not available in primitives
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.widest,
         },
         bold: {
-          fontWeight: '600',
-          fontSize: '0.6875rem', // 11px
-          lineHeight: '1.45',
-          letterSpacing: '0.025em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: '0.6875rem', // 11px - Not available in primitives
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.widest,
         },
       },
       sm: {
         light: {
-          fontWeight: '300',
-          fontSize: '0.625rem', // 10px
-          lineHeight: '1.4',
-          letterSpacing: '0.03em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: '0.625rem', // 10px - Not available in primitives
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.widest,
         },
         medium: {
-          fontWeight: '400',
-          fontSize: '0.625rem', // 10px
-          lineHeight: '1.4',
-          letterSpacing: '0.03em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: '0.625rem', // 10px - Not available in primitives
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.widest,
         },
         bold: {
-          fontWeight: '600',
-          fontSize: '0.625rem', // 10px
-          lineHeight: '1.4',
-          letterSpacing: '0.03em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: '0.625rem', // 10px - Not available in primitives
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.widest,
         },
       },
     },
     label: {
       xl: {
         light: {
-          fontWeight: '400',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.4',
-          letterSpacing: '0.02em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.4',
-          letterSpacing: '0.02em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '0.875rem', // 14px
-          lineHeight: '1.4',
-          letterSpacing: '0.02em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: FONT_SIZE.sm,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.wider,
         },
       },
       lg: {
         light: {
-          fontWeight: '400',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.4',
-          letterSpacing: '0.025em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.4',
-          letterSpacing: '0.025em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '0.75rem', // 12px
-          lineHeight: '1.4',
-          letterSpacing: '0.025em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: FONT_SIZE.xs,
+          lineHeight: LINE_HEIGHT.snug,
+          letterSpacing: LETTER_SPACING.wider,
         },
       },
       md: {
         light: {
-          fontWeight: '400',
-          fontSize: '0.6875rem', // 11px
-          lineHeight: '1.35',
-          letterSpacing: '0.03em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: '0.6875rem', // 11px - Not available in primitives
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.widest,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '0.6875rem', // 11px
-          lineHeight: '1.35',
-          letterSpacing: '0.03em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: '0.6875rem', // 11px - Not available in primitives
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.widest,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '0.6875rem', // 11px
-          lineHeight: '1.35',
-          letterSpacing: '0.03em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: '0.6875rem', // 11px - Not available in primitives
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.widest,
         },
       },
       sm: {
         light: {
-          fontWeight: '400',
-          fontSize: '0.625rem', // 10px
-          lineHeight: '1.3',
-          letterSpacing: '0.035em',
+          fontWeight: FONT_WEIGHT.normal,
+          fontSize: '0.625rem', // 10px - Not available in primitives
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.widest,
         },
         medium: {
-          fontWeight: '500',
-          fontSize: '0.625rem', // 10px
-          lineHeight: '1.3',
-          letterSpacing: '0.035em',
+          fontWeight: FONT_WEIGHT.medium,
+          fontSize: '0.625rem', // 10px - Not available in primitives
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.widest,
         },
         bold: {
-          fontWeight: '700',
-          fontSize: '0.625rem', // 10px
-          lineHeight: '1.3',
-          letterSpacing: '0.035em',
+          fontWeight: FONT_WEIGHT.semibold,
+          fontSize: '0.625rem', // 10px - Not available in primitives
+          lineHeight: LINE_HEIGHT.tight,
+          letterSpacing: LETTER_SPACING.widest,
         },
       },
     },

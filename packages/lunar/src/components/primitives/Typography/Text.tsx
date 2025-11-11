@@ -1,4 +1,4 @@
-import { ComponentProps, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import clsx from 'clsx';
 

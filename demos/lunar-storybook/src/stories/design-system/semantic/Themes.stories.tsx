@@ -22,7 +22,7 @@ const ThemeColorSwatch = ({ tokenName }: { tokenName: string }) => {
           style={{
             width: '100px',
             height: '100px',
-            backgroundColor: tokenVar,
+            backgroundColor: tokenVar as unknown as string,
             borderRadius: '8px',
             border: '1px solid #e5e5e5',
             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
