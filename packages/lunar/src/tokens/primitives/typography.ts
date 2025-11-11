@@ -31,6 +31,8 @@ export const FONT_FAMILY = {
 } as const;
 
 export const FONT_SIZE = {
+  '3xs': '0.625rem', // 10px
+  '2xs': '0.6875rem', // 11px
   xs: '0.9375rem', // 15px
   sm: '1.09375rem', // 17.5px
   base: '1.25rem', // 20px
@@ -76,6 +78,8 @@ export const LINE_HEIGHT = {
 } as const;
 
 export const LINE_HEIGHT__TIGHT = {
+  '3xs': '0.75rem', // 12px (10 × 1.14 = 11.4 → 12px)
+  '2xs': '0.75rem', // 12px (11 × 1.14 = 12.54 → 12px)
   xs: '1rem', // 16px (15 × 1.14 = 17.1 → 16px)
   sm: '1.25rem', // 20px (17.5 × 1.14 = 19.95 → 20px)
   base: '1.5rem', // 24px (20 × 1.14 = 22.8 → 24px)
@@ -92,6 +96,8 @@ export const LINE_HEIGHT__TIGHT = {
 } as const;
 
 export const LINE_HEIGHT__RELAXED = {
+  '3xs': '1rem', // 16px (10 × 1.5 = 15 → 16px)
+  '2xs': '1rem', // 16px (11 × 1.5 = 16.5 → 16px)
   xs: '1.5rem', // 24px (15 × 1.5 = 22.5 → 24px)
   sm: '1.75rem', // 28px (17.5 × 1.5 = 26.25 → 28px)
   base: '2rem', // 32px (20 × 1.5 = 30 → 32px)

@@ -13,7 +13,7 @@ import {
 import { SPACING } from '../tokens/primitives/spacing.js';
 import { BORDER_RADIUS, BORDER_WIDTH } from '../tokens/primitives/borders.js';
 import { BOX_SHADOW } from '../tokens/primitives/shadows.js';
-import { FONT_FAMILY, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, LETTER_SPACING } from '../tokens/primitives/typography.js';
+import { FONT_FAMILY, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT__TIGHT, LINE_HEIGHT__RELAXED, LETTER_SPACING } from '../tokens/primitives/typography.js';
 
 const regalThemeVars = createTheme(themeContract, {
   colors: {
@@ -236,19 +236,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.extralight,
           fontSize: FONT_SIZE['7xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['7xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
         medium: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE['7xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['7xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
         bold: {
           fontWeight: FONT_WEIGHT.extrabold,
           fontSize: FONT_SIZE['7xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['7xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
       },
@@ -256,19 +256,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.extralight,
           fontSize: FONT_SIZE['6xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['6xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
         medium: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE['6xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['6xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
         bold: {
           fontWeight: FONT_WEIGHT.extrabold,
           fontSize: FONT_SIZE['6xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['6xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
       },
@@ -276,19 +276,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.extralight,
           fontSize: FONT_SIZE['5xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['5xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
         medium: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE['5xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['5xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
         bold: {
           fontWeight: FONT_WEIGHT.extrabold,
           fontSize: FONT_SIZE['5xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['5xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
       },
@@ -296,19 +296,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.extralight,
           fontSize: FONT_SIZE['4xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['4xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
         medium: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE['4xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['4xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
         bold: {
           fontWeight: FONT_WEIGHT.extrabold,
           fontSize: FONT_SIZE['4xl'],
-          lineHeight: LINE_HEIGHT.tight,
+          lineHeight: LINE_HEIGHT__TIGHT['4xl'],
           letterSpacing: LETTER_SPACING.tight,
         },
       },
@@ -318,19 +318,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE['3xl'],
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT['3xl'],
           letterSpacing: LETTER_SPACING.normal,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE['3xl'],
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT['3xl'],
           letterSpacing: LETTER_SPACING.normal,
         },
         bold: {
           fontWeight: FONT_WEIGHT.bold,
           fontSize: FONT_SIZE['3xl'],
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT['3xl'],
           letterSpacing: LETTER_SPACING.normal,
         },
       },
@@ -338,19 +338,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE['2xl'],
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT['2xl'],
           letterSpacing: LETTER_SPACING.normal,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE['2xl'],
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT['2xl'],
           letterSpacing: LETTER_SPACING.normal,
         },
         bold: {
           fontWeight: FONT_WEIGHT.bold,
           fontSize: FONT_SIZE['2xl'],
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT['2xl'],
           letterSpacing: LETTER_SPACING.normal,
         },
       },
@@ -358,19 +358,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.xl,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT.xl,
           letterSpacing: LETTER_SPACING.normal,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.xl,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT.xl,
           letterSpacing: LETTER_SPACING.normal,
         },
         bold: {
           fontWeight: FONT_WEIGHT.bold,
           fontSize: FONT_SIZE.xl,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT.xl,
           letterSpacing: LETTER_SPACING.normal,
         },
       },
@@ -378,19 +378,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT.lg,
           letterSpacing: LETTER_SPACING.normal,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT.lg,
           letterSpacing: LETTER_SPACING.normal,
         },
         bold: {
           fontWeight: FONT_WEIGHT.bold,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__TIGHT.lg,
           letterSpacing: LETTER_SPACING.normal,
         },
       },
@@ -400,19 +400,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__TIGHT.lg,
           letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__TIGHT.lg,
           letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
           fontWeight: FONT_WEIGHT.bold,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__TIGHT.lg,
           letterSpacing: LETTER_SPACING.wide,
         },
       },
@@ -420,19 +420,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.base,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__TIGHT.base,
           letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.base,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__TIGHT.base,
           letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
           fontWeight: FONT_WEIGHT.bold,
           fontSize: FONT_SIZE.base,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__TIGHT.base,
           letterSpacing: LETTER_SPACING.wide,
         },
       },
@@ -440,19 +440,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
           fontWeight: FONT_WEIGHT.bold,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wide,
         },
       },
@@ -460,19 +460,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
           fontWeight: FONT_WEIGHT.bold,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
       },
@@ -482,19 +482,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.lg,
           letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.lg,
           letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
           fontSize: FONT_SIZE.lg,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.lg,
           letterSpacing: LETTER_SPACING.wide,
         },
       },
@@ -502,19 +502,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.base,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.base,
           letterSpacing: LETTER_SPACING.wide,
         },
         medium: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE.base,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.base,
           letterSpacing: LETTER_SPACING.wide,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
           fontSize: FONT_SIZE.base,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.base,
           letterSpacing: LETTER_SPACING.wide,
         },
       },
@@ -522,19 +522,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
       },
@@ -542,19 +542,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.light,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.relaxed,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
       },
@@ -564,19 +564,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
       },
@@ -584,59 +584,59 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.normal,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
       },
       md: {
         light: {
           fontWeight: FONT_WEIGHT.normal,
-          fontSize: '0.6875rem', // 11px - Not available in primitives
-          lineHeight: LINE_HEIGHT.snug,
+          fontSize: FONT_SIZE['2xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['2xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
-          fontSize: '0.6875rem', // 11px - Not available in primitives
-          lineHeight: LINE_HEIGHT.snug,
+          fontSize: FONT_SIZE['2xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['2xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
-          fontSize: '0.6875rem', // 11px - Not available in primitives
-          lineHeight: LINE_HEIGHT.snug,
+          fontSize: FONT_SIZE['2xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['2xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
       },
       sm: {
         light: {
           fontWeight: FONT_WEIGHT.normal,
-          fontSize: '0.625rem', // 10px - Not available in primitives
-          lineHeight: LINE_HEIGHT.snug,
+          fontSize: FONT_SIZE['3xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['3xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
-          fontSize: '0.625rem', // 10px - Not available in primitives
-          lineHeight: LINE_HEIGHT.snug,
+          fontSize: FONT_SIZE['3xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['3xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
-          fontSize: '0.625rem', // 10px - Not available in primitives
-          lineHeight: LINE_HEIGHT.snug,
+          fontSize: FONT_SIZE['3xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['3xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
       },
@@ -646,19 +646,19 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
           fontSize: FONT_SIZE.sm,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__RELAXED.sm,
           letterSpacing: LETTER_SPACING.wider,
         },
       },
@@ -666,59 +666,59 @@ const regalThemeVars = createTheme(themeContract, {
         light: {
           fontWeight: FONT_WEIGHT.normal,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
           fontSize: FONT_SIZE.xs,
-          lineHeight: LINE_HEIGHT.snug,
+          lineHeight: LINE_HEIGHT__RELAXED.xs,
           letterSpacing: LETTER_SPACING.wider,
         },
       },
       md: {
         light: {
           fontWeight: FONT_WEIGHT.normal,
-          fontSize: '0.6875rem', // 11px - Not available in primitives
-          lineHeight: LINE_HEIGHT.tight,
+          fontSize: FONT_SIZE['2xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['2xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
-          fontSize: '0.6875rem', // 11px - Not available in primitives
-          lineHeight: LINE_HEIGHT.tight,
+          fontSize: FONT_SIZE['2xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['2xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
-          fontSize: '0.6875rem', // 11px - Not available in primitives
-          lineHeight: LINE_HEIGHT.tight,
+          fontSize: FONT_SIZE['2xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['2xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
       },
       sm: {
         light: {
           fontWeight: FONT_WEIGHT.normal,
-          fontSize: '0.625rem', // 10px - Not available in primitives
-          lineHeight: LINE_HEIGHT.tight,
+          fontSize: FONT_SIZE['3xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['3xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
         medium: {
           fontWeight: FONT_WEIGHT.medium,
-          fontSize: '0.625rem', // 10px - Not available in primitives
-          lineHeight: LINE_HEIGHT.tight,
+          fontSize: FONT_SIZE['3xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['3xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
         bold: {
           fontWeight: FONT_WEIGHT.semibold,
-          fontSize: '0.625rem', // 10px - Not available in primitives
-          lineHeight: LINE_HEIGHT.tight,
+          fontSize: FONT_SIZE['3xs'],
+          lineHeight: LINE_HEIGHT__RELAXED['3xs'],
           letterSpacing: LETTER_SPACING.widest,
         },
       },
