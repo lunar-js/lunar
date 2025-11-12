@@ -21,7 +21,6 @@ const TEXT_COLOR__MUTED = 'muted'; // maps to text.tertiary
 const TEXT_COLOR__DISABLED = 'disabled';
 const TEXT_COLOR__INVERSE = 'inverse';
 const TEXT_COLOR__INTERACTIVE = 'interactive';
-const TEXT_COLOR__INTERACTIVE_HOVER = 'interactive-hover';
 const TEXT_COLOR__SUCCESS = 'success';
 const TEXT_COLOR__WARNING = 'warning';
 const TEXT_COLOR__DANGER = 'danger'; // maps to text.error
@@ -86,9 +85,6 @@ const textVariants = recipe({
       // Interactive colors
       [TEXT_COLOR__INTERACTIVE]: {
         color: themeContract.colors.text.interactive.default,
-      },
-      [TEXT_COLOR__INTERACTIVE_HOVER]: {
-        color: themeContract.colors.text.interactive.hover,
       },
 
       // Semantic colors
@@ -1082,7 +1078,6 @@ export {
   TEXT_COLOR__DISABLED,
   TEXT_COLOR__INVERSE,
   TEXT_COLOR__INTERACTIVE,
-  TEXT_COLOR__INTERACTIVE_HOVER,
   TEXT_COLOR__SUCCESS,
   TEXT_COLOR__WARNING,
   TEXT_COLOR__DANGER,
