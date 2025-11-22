@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { themeContract } from '@wcm/lunar/src/index.js';
+import { themeContract } from '@wcm/lunar/src/index.css.js';
 
 const meta = {
   title: 'Design System/Semantic/Themes',

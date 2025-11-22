@@ -1,6 +1,6 @@
 import { createTheme, style } from '@vanilla-extract/css';
 
-import { themeContract } from '../tokens/tokens.css.js';
+import { themeContract } from './tokens/tokens.css.js';
 import {
   COLORS__PEARL,
   COLORS__GOLD,
@@ -9,10 +9,10 @@ import {
   COLORS__RED,
   COLORS__BLUE,
   COLORS__PURE,
-} from '../tokens/primitives/colors.js';
-import { SPACING } from '../tokens/primitives/spacing.js';
-import { BORDER_RADIUS, BORDER_WIDTH } from '../tokens/primitives/borders.js';
-import { BOX_SHADOW } from '../tokens/primitives/shadows.js';
+} from './tokens/primitives/colors.js';
+import { SPACING } from './tokens/primitives/spacing.js';
+import { BORDER_RADIUS, BORDER_WIDTH } from './tokens/primitives/borders.js';
+import { BOX_SHADOW } from './tokens/primitives/shadows.js';
 import {
   FONT_FAMILY,
   FONT_SIZE,
@@ -20,7 +20,7 @@ import {
   LINE_HEIGHT__TIGHT,
   LINE_HEIGHT__RELAXED,
   LETTER_SPACING,
-} from '../tokens/primitives/typography.js';
+} from './tokens/primitives/typography.js';
 
 const regalThemeVars = createTheme(themeContract, {
   colors: {
@@ -733,4 +733,7 @@ const regalThemeVars = createTheme(themeContract, {
   },
 });
 
-export const regalTheme = style([regalThemeVars, { colorScheme: 'light dark' }]);
+export const regalTheme = style([
+  regalThemeVars,
+  { colorScheme: 'light dark', fontFamily: themeContract.typography.fontFamily.base },
+]);

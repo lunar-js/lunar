@@ -10,7 +10,8 @@
   },
   "scripts": {
     "____ RUN COMMANDS ____": "",
-    "dev:lunar": "concurrently 'pnpm -F @wcm/lunar dev' 'pnpm -F lunar-storybook dev'",
+    "dev:lunar-storybook": "concurrently 'pnpm -F @wcm/lunar dev' 'pnpm -F lunar-storybook dev'",
+    "dev:lunar-react-router": "concurrently 'pnpm -F @wcm/lunar dev' 'pnpm -F lunar-react-router dev'",
     "____ WORKSPACE COMMANDS ____": "",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
@@ -19,6 +20,8 @@
     "typecheck": "pnpm -r typecheck",
     "format": "prettier --write .",
     "format:verify": "prettier --list-different .",
+    "____ CLEANUP COMMANDS ____": "",
+    "clean:modules": "rimraf --glob '**/node_modules'",
     "____ LIFECYCLE COMMANDS ____": "",
     "postinstall": "pnpm run postinstall:setup-git-hooks && pnpm run build",
     "postinstall:setup-git-hooks": "git config core.hooksPath ./git-hooks"

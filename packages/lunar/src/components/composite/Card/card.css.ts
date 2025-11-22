@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { themeContract } from '../../../tokens/tokens.css.js';
+import { themeContract } from '../../../themes/tokens/tokens.css.js';
 
 // Base Card styles
 export const card = style({
@@ -82,4 +82,3 @@ export const cardFooter = style({
     },
   },
 });
-

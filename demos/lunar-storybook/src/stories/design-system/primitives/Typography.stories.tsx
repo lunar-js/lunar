@@ -7,7 +7,7 @@ import {
   LETTER_SPACING,
   LINE_HEIGHT__TIGHT,
   LINE_HEIGHT__RELAXED,
-} from '@wcm/lunar/src/tokens/primitives/typography.js';
+} from '@wcm/lunar/src/index.js';
 
 const meta = {
   title: 'Design System/Primitives/Typography',

@@ -1,5 +1,8 @@
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
+import { ThemeProvider } from '@wcm/lunar';
+import { regalTheme } from '@wcm/lunar/styles.css';
+
 import type { Route } from './+types/root';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -11,6 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <Meta />
         <Links />
       </head>
+
       <body>
         {children}
         <ScrollRestoration />
@@ -21,7 +25,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 const App = () => {
-  return <Outlet />;
+  return (
+    <ThemeProvider theme={regalTheme}>
+      {themeClassName => (
+        <div id="root" className={themeClassName}>
+          <Outlet />
+        </div>
+      )}
+    </ThemeProvider>
+  );
 };
 
 const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {

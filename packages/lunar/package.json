@@ -14,16 +14,10 @@
         "default": "./dist/index.js"
       }
     },
-    "./utilities": {
+    "./styles.css": {
       "import": {
-        "types": "./dist/utilities.d.ts",
-        "default": "./dist/utilities.js"
-      }
-    },
-    "./global-styles.css": {
-      "import": {
-        "types": "./dist/global-styles.css.d.ts",
-        "default": "./dist/global-styles.css.js"
+        "types": "./dist/styles.css.d.ts",
+        "default": "./dist/styles.css.js"
       }
     },
     "./src/*": "./src/*",
