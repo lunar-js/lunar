@@ -19,7 +19,6 @@
     "clean:build": "rimraf storybook-static"
   },
   "dependencies": {
-    "@vanilla-extract/css": "^1.17.4",
     "@wcm/lunar": "workspace:^",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
@@ -34,6 +33,7 @@
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@vanilla-extract/css": "^1.17.4",
     "@vanilla-extract/vite-plugin": "^5.1.1",
     "@vitejs/plugin-react": "^4.7.0",
     "@vitest/browser": "^3.2.4",

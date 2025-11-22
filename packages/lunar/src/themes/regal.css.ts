@@ -13,7 +13,14 @@ import {
 import { SPACING } from '../tokens/primitives/spacing.js';
 import { BORDER_RADIUS, BORDER_WIDTH } from '../tokens/primitives/borders.js';
 import { BOX_SHADOW } from '../tokens/primitives/shadows.js';
-import { FONT_FAMILY, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT__TIGHT, LINE_HEIGHT__RELAXED, LETTER_SPACING } from '../tokens/primitives/typography.js';
+import {
+  FONT_FAMILY,
+  FONT_SIZE,
+  FONT_WEIGHT,
+  LINE_HEIGHT__TIGHT,
+  LINE_HEIGHT__RELAXED,
+  LETTER_SPACING,
+} from '../tokens/primitives/typography.js';
 
 const regalThemeVars = createTheme(themeContract, {
   colors: {
@@ -229,7 +236,7 @@ const regalThemeVars = createTheme(themeContract, {
   },
   typography: {
     fontFamily: {
-      base: FONT_FAMILY.mono.primary,
+      base: FONT_FAMILY.sans.fallback,
     },
     display: {
       xl: {

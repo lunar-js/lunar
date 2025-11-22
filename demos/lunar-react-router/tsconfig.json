@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@wcm/boiler-room/tsconfig/esm.json",
+  "compilerOptions": {
+    "rootDirs": [
+      ".",
+      "./.react-router/types"
+    ],
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "./.react-router/types",
+    "src",
+    "react-router.config.ts",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

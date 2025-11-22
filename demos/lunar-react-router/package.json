@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "lunar-react-router",
+  "description": "React Router demo using Lunar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "____ RUN COMMANDS ____": "",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "____ BUILD COMMANDS ____": "",
+    "build": "react-router build",
+    "____ VALIDATION COMMANDS ____": "",
+    "typecheck": "react-router typegen && tsc -p ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@react-router/node": "^7.9.2",
+    "@react-router/serve": "^7.9.2",
+    "@wcm/lunar": "workspace:^",
+    "isbot": "^5.1.31",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router": "^7.9.2"
+  },
+  "devDependencies": {
+    "@react-router/dev": "^7.9.2",
+    "@types/node": "^22",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vanilla-extract/css": "^1.17.4",
+    "@vanilla-extract/vite-plugin": "^5.1.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "license": "UNLICENSED"
+}

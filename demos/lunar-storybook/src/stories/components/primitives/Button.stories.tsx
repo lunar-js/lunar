@@ -114,9 +114,6 @@ const meta = {
   args: {
     disabled: false,
     children: 'Click me!',
-    onClick: () => {
-      alert('clicked!');
-    },
   },
   argTypes: {
     disabled: { description: 'Disabling a button prevents any "onClick" events from firing.' },

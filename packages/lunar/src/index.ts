@@ -12,6 +12,8 @@ export {
 } from './components/primitives/Button/button.css.js';
 
 export { default as Text, type TextProps } from './components/primitives/Typography/Text.js';
+
+export { Card, CardHeader, CardFooter, CardTitle, CardAction, CardDescription, CardContent } from './components/composite/Card/Card.js';
 export {
   TEXT_VARIANT__DISPLAY,
   TEXT_VARIANT__HEADING,

@@ -20,6 +20,12 @@
         "default": "./dist/utilities.js"
       }
     },
+    "./global-styles.css": {
+      "import": {
+        "types": "./dist/global-styles.css.d.ts",
+        "default": "./dist/global-styles.css.js"
+      }
+    },
     "./src/*": "./src/*",
     "./package.json": "./package.json"
   },

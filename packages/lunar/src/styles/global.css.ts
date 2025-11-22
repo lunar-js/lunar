@@ -1,5 +1,7 @@
 import { globalStyle } from '@vanilla-extract/css';
 
+import { themeContract } from '../tokens/tokens.css.js';
+
 globalStyle('*, *::before, *::after', {
   boxSizing: 'border-box',
 });
@@ -15,6 +17,7 @@ globalStyle('html, body', {
 globalStyle('body', {
   lineHeight: 1.5,
   WebkitFontSmoothing: 'antialiased',
+  fontFamily: themeContract.typography.fontFamily.base,
 });
 
 globalStyle('img, picture, video, canvas, svg', {
