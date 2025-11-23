@@ -16,7 +16,8 @@
 /**
  * Component Exports
  */
-export { default as ThemeProvider, useTheme } from './themes/ThemeProvider.js';
+export { default as ThemeProvider } from './themes/ThemeProvider/ThemeProvider.js';
+export { useTheme } from './hooks/theme.js';
 
 export { default as Button, type ButtonProps } from './components/primitives/Button/Button.js';
 export {
@@ -97,3 +98,5 @@ export {
   LINE_HEIGHT__TIGHT,
   LINE_HEIGHT__RELAXED,
 } from './themes/tokens/primitives/typography.js';
+export { COLOR_SCHEME__DARK, COLOR_SCHEME__LIGHT, COLOR_SCHEME__SYSTEM } from './constants/theming.js';
+export type { ColorScheme } from './types/theming.js';

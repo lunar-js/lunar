@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
 const App = () => {
   return (
-    <ThemeProvider theme={regalTheme}>
+    <ThemeProvider themeClassName={regalTheme}>
       {themeClassName => (
         <div id="root" className={themeClassName}>
           <Outlet />
