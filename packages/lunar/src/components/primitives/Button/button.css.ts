@@ -3,6 +3,7 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { themeContract } from '../../../themes/tokens/tokens.css.js';
 import { withCustomOutline, withSafeTransition } from '../../../themes/styles/utilities.js';
+import { COLORS__PURE } from '../../../themes/tokens/primitives/colors.js';
 
 const BUTTON_VARIANT__PRIMARY = 'primary';
 const BUTTON_VARIANT__SECONDARY = 'secondary';
@@ -38,6 +39,7 @@ const buttonVariants = recipe({
       userSelect: 'none',
       position: 'relative',
       textDecoration: 'none',
+      outlineColor: COLORS__PURE.transparent,
       ':disabled': {
         cursor: 'not-allowed',
       },

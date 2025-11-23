@@ -32,6 +32,10 @@ export {
   BUTTON_SIZE__SMALL,
 } from './components/primitives/Button/button.css.js';
 
+export { default as Input } from './components/primitives/Input/Input.js';
+
+export { default as Label } from './components/primitives/Label/Label.js';
+
 export { default as Text, type TextProps } from './components/primitives/Typography/Text.js';
 
 export {

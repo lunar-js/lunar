@@ -21,12 +21,10 @@ interface ButtonProps extends ComponentProps<'button'> {
   size?: ButtonSize;
 }
 
-const Button: FC<ButtonProps> = ({ ref, className, size, variant, asChild = false, ...props }) => {
+const Button: FC<ButtonProps> = ({ className, size, variant, asChild = false, ...props }) => {
   const Comp = asChild ? Slot : 'button';
 
-  return (
-    <Comp ref={ref} data-slot="button" className={clsx(buttonVariants({ variant, size }), className)} {...props} />
-  );
+  return <Comp data-slot="button" className={clsx(buttonVariants({ variant, size }), className)} {...props} />;
 };
 
 export type { ButtonProps };
