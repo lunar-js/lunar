@@ -1,5 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+/**
+ * NOTE: This import pattern (@wcm/lunar/src/index.js) is not the normal way to import @wcm/lunar.
+ * This is done specifically for Storybook to promote better React docgen and ensure consistent
+ * styling with vanilla-extract. For proper import examples, see the demos in /demos/lunar-react-router.
+ */
 import { BORDER_RADIUS, BORDER_WIDTH } from '@wcm/lunar/src/index.js';
 
 const meta = {
@@ -20,9 +25,9 @@ export const BorderRadius: Story = {
         const pixelEquivalent =
           value === '0'
             ? '0px'
-            : value === '9999px'
+            : (value === '9999px'
               ? 'full (9999px)'
-              : `${(Number.parseFloat(value) * 16).toString()}px`;
+              : `${(Number.parseFloat(value) * 16).toString()}px`);
 
         return (
           <div key={token} style={{ marginBottom: '24px' }}>

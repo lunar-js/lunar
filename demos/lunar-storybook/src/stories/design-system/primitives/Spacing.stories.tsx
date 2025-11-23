@@ -1,5 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+/**
+ * NOTE: This import pattern (@wcm/lunar/src/index.js) is not the normal way to import @wcm/lunar.
+ * This is done specifically for Storybook to promote better React docgen and ensure consistent
+ * styling with vanilla-extract. For proper import examples, see the demos in /demos/lunar-react-router.
+ */
 import { SPACING } from '@wcm/lunar/src/index.js';
 
 const meta = {
@@ -17,7 +22,7 @@ export const AllSpacing: Story = {
     <div style={{ padding: '32px', fontFamily: 'system-ui, sans-serif' }}>
       {Object.entries(SPACING).map(([token, value]) => {
         const pixelEquivalent =
-          value === '0' ? '0px' : value === '1px' ? '1px' : `${(Number.parseFloat(value) * 16).toString()}px`;
+          value === '0' ? '0px' : (value === '1px' ? '1px' : `${(Number.parseFloat(value) * 16).toString()}px`);
 
         return (
           <div key={token} style={{ marginBottom: '24px' }}>

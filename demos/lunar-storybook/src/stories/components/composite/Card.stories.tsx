@@ -1,5 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react-vite';
 
+/**
+ * NOTE: This import pattern (@wcm/lunar/src/index.js) is not the normal way to import @wcm/lunar.
+ * This is done specifically for Storybook to promote better React docgen and ensure consistent
+ * styling with vanilla-extract. For proper import examples, see the demos in /demos/lunar-react-router.
+ */
 import {
   Card,
   CardHeader,
@@ -15,10 +20,6 @@ import {
 } from '@wcm/lunar/src/index.js';
 
 type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
-  tags: ['!autodocs', '!dev'],
-};
 
 export const Simple: Story = {
   render: () => (
