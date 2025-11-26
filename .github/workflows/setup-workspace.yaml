@@ -36,7 +36,22 @@ jobs:
           key: pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             pnpm-store-
+
+      - name: Cache Turbo build setup
+        id: cache-turbo
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
       - name: Install Dependencies (cache missing)
         if: steps.cache-deps.outputs.cache-hit != 'true'
         shell: bash
         run: pnpm install --frozen-lockfile --prefer-offline --config.ignore-scripts=true
+
+      - name: Build Packages (cache missing)
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+        shell: bash
+        run: pnpm run build

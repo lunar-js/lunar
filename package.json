@@ -13,7 +13,7 @@
     "dev:lunar-storybook": "concurrently 'pnpm -F @wcm/lunar dev' 'pnpm -F lunar-storybook dev'",
     "dev:lunar-react-router": "concurrently 'pnpm -F @wcm/lunar dev' 'pnpm -F lunar-react-router dev'",
     "____ WORKSPACE COMMANDS ____": "",
-    "build": "pnpm -r build",
+    "build": "turbo run build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
     "lint:fix": "pnpm -r lint:fix",
@@ -39,6 +39,7 @@
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
     "tsdown": "0.13.0",
+    "turbo": "^2.6.1",
     "typescript": "^5.8.3",
     "vite": "^7.0.6",
     "vitest": "^4.0.0"

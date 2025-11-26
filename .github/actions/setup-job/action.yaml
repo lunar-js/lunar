@@ -14,6 +14,18 @@ runs:
         node-version-file: '.nvmrc'
         cache: 'pnpm'
 
+    - name: Restore Turbo Cache
+      uses: actions/cache/restore@v4
+      with:
+        path: .turbo
+        key: ${{ runner.os }}-turbo-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-turbo-
+
+    - name: Use Cached Build
+      shell: bash
+      run: pnpm run build
+
     - name: Use Cached Dependencies
       shell: bash
       run: pnpm install --frozen-lockfile --offline --config.ignore-scripts=true
