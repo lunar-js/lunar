@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@wcm/boiler-room/tsconfig/base.json",
-  "include": ["prettier.config.ts"]
+  "include": ["*.ts"],
+  "exclude": ["packages", "demo", "node_modules"]
 }

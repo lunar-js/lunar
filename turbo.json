@@ -6,10 +6,23 @@
       "outputs": ["storybook-static/**", "build/**", "dist/**"]
     },
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"]
     },
     "typecheck": {
-      "dependsOn": ["^build"]
-    }
+      "dependsOn": ["build"]
+    },
+    "//#typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
+    "lint": {},
+    "//#lint": {
+      "dependsOn": ["^lint"]
+    },
+    "lint:fix": {},
+    "//#lint:fix": {
+      "dependsOn": ["^lint:fix"]
+    },
+    "//#format": {},
+    "//#format:verify": {}
   }
 }

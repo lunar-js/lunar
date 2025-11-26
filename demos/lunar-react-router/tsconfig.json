@@ -5,6 +5,6 @@
     "rootDirs": [".", "./.react-router/types"],
     "types": ["node", "vite/client"]
   },
-  "include": ["./.react-router/types", "src", "react-router.config.ts", "vite.config.ts"],
+  "include": ["*.ts", "./.react-router/types", "src"],
   "exclude": ["node_modules"]
 }
