@@ -2,15 +2,6 @@ name: Setup Workspace
 
 on:
   workflow_call:
-    inputs:
-      node-version:
-        description: 'Node.js version to install'
-        required: true
-        type: string
-      pnpm-version:
-        description: 'PNPM version to install'
-        required: true
-        type: string
     outputs:
       cache-hit:
         value: ${{ jobs.setup.outputs.cache-hit }}
@@ -29,13 +20,12 @@ jobs:
       - name: Install PNPM
         uses: pnpm/action-setup@v4
         with:
-          version: ${{ inputs.pnpm-version }}
           run_install: false
 
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ inputs.node-version }}
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Cache PNPM Store

@@ -10,9 +10,6 @@ jobs:
   Setup:
     name: Setup Workspace
     uses: ./.github/workflows/setup-workspace.yaml
-    with:
-      node-version: 24.0.2
-      pnpm-version: 10.6.3
 
   Linting:
     name: Check Linting
