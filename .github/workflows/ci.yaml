@@ -10,9 +10,6 @@ jobs:
   Setup:
     name: Setup Workspace
     uses: ./.github/workflows/setup-workspace.yaml
-    with:
-      node-version: 24.0.2
-      pnpm-version: 10.6.3
 
   Linting:
     name: Check Linting
@@ -27,7 +24,7 @@ jobs:
 
       - name: Lint Check
         shell: bash
-        run: pnpm run lint
+        run: pnpm run workspace:lint
 
   Formatting:
     name: Check Formatting
@@ -42,7 +39,7 @@ jobs:
 
       - name: Format Check
         shell: bash
-        run: pnpm run format:verify
+        run: pnpm run workspace:format:verify
 
   Typecheck:
     name: Check Typing
@@ -55,9 +52,9 @@ jobs:
       - name: Setup Job
         uses: ./.github/actions/setup-job
 
-      - name: Format Check
+      - name: Typecheck
         shell: bash
-        run: pnpm run typecheck
+        run: pnpm run workspace:typecheck
 
   Tests:
     name: Run Unit Tests
@@ -72,7 +69,7 @@ jobs:
 
       - name: Unit Tests
         shell: bash
-        run: pnpm run test
+        run: pnpm run workspace:test
 
   Build:
     name: Build App
@@ -87,4 +84,4 @@ jobs:
 
       - name: Build
         shell: bash
-        run: pnpm run build
+        run: pnpm run workspace:build
