@@ -10,6 +10,8 @@ combines the accessibility features of Radix UI with a clean design aesthetic an
 
 ## Installation
 
+> **Note:** This package is ESM-only and requires a Node.js environment that supports ES modules.
+
 ```bash
 # Using pnpm (recommended)
 pnpm add @wcm/lunar

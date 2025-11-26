@@ -10,6 +10,8 @@ provides opinionated, production-ready configurations that can be easily shared 
 
 ## Installation
 
+> **Note:** This package is ESM-only and requires a Node.js environment that supports ES modules.
+
 ```bash
 # Using pnpm (recommended)
 pnpm add -D @wcm/boiler-room
