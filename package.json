@@ -6,7 +6,7 @@
   "type": "module",
   "packageManager": "pnpm@10.5.2",
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=24.11.1"
   },
   "scripts": {
     "____ RUN COMMANDS ____": "",
@@ -26,13 +26,17 @@
     "format:verify": "prettier --list-different .",
     "lint": "eslint --max-warnings=0 *.{js,ts}",
     "lint:fix": "eslint --max-warnings=0 --fix",
+    "____ CHANGELOG COMMANDS ____": "",
+    "changelog:add": "changeset",
+    "changelog:apply": "changeset version",
     "____ CLEANUP COMMANDS ____": "",
     "clean:modules": "rimraf --glob '**/node_modules'",
     "____ LIFECYCLE COMMANDS ____": "",
-    "postinstall": "pnpm run postinstall:setup-git-hooks && pnpm run build",
+    "postinstall": "pnpm run postinstall:setup-git-hooks && pnpm run workspace:build",
     "postinstall:setup-git-hooks": "git config core.hooksPath ./git-hooks"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.7",
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
