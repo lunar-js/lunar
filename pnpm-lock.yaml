@@ -20,6 +20,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.29.7
         version: 2.29.7(@types/node@24.10.1)
+      '@lunar-js/boiler-room':
+        specifier: workspace:^
+        version: link:packages/boiler-room
       '@types/node':
         specifier: ^24.1.0
         version: 24.10.1
@@ -35,9 +38,6 @@ importers:
       '@vanilla-extract/vite-plugin':
         specifier: ^5.1.1
         version: 5.1.1(@types/node@24.10.1)(jiti@2.6.1)(vite@7.2.4(@types/node@24.10.1)(jiti@2.6.1)(yaml@2.8.1))(yaml@2.8.1)
-      '@wcm/boiler-room':
-        specifier: workspace:^
-        version: link:packages/boiler-room
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
@@ -71,15 +71,15 @@ importers:
 
   demos/lunar-react-router:
     dependencies:
+      '@lunar-js/lunar':
+        specifier: workspace:^
+        version: link:../../packages/lunar
       '@react-router/node':
         specifier: ^7.9.2
         version: 7.9.6(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
       '@react-router/serve':
         specifier: ^7.9.2
         version: 7.9.6(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)
-      '@wcm/lunar':
-        specifier: workspace:^
-        version: link:../../packages/lunar
       isbot:
         specifier: ^5.1.31
         version: 5.1.32
@@ -99,7 +99,7 @@ importers:
 
   demos/lunar-storybook:
     dependencies:
-      '@wcm/lunar':
+      '@lunar-js/lunar':
         specifier: workspace:^
         version: link:../../packages/lunar
       react:
