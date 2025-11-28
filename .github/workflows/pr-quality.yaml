@@ -4,10 +4,15 @@ on:
   pull_request:
 
 jobs:
+  Setup:
+    name: Setup Workspace
+    uses: ./.github/workflows/setup-workspace.yaml
+
   changeset-validation:
     name: Validate Changesets
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    needs: Setup
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
