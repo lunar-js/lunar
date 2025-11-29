@@ -21,6 +21,10 @@ patchedDependencies:
 importers:
 
   .:
+    dependencies:
+      '@changesets/get-github-info':
+        specifier: ^0.7.0
+        version: 0.7.0
     devDependencies:
       '@changesets/cli':
         specifier: ^2.29.7
