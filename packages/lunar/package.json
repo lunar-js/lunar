@@ -44,6 +44,7 @@
     "lint": "eslint --max-warnings=0 .",
     "lint:fix": "pnpm run lint --fix",
     "typecheck": "tsc -p ./tsconfig.json --noEmit",
+    "size": "size-limit",
     "____ CLEANUP COMMANDS ____": "",
     "clean": "pnpm run clean:build",
     "clean:build": "rimraf dist"
@@ -68,5 +69,12 @@
     "react": "^19",
     "react-dom": "^19"
   },
+  "size-limit": [
+    {
+      "path": "./dist/index.js",
+      "import": "{}",
+      "limit": "20 B"
+    }
+  ],
   "license": "MIT"
 }

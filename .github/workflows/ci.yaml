@@ -86,3 +86,19 @@ jobs:
       - name: Unit Tests
         shell: bash
         run: pnpm run workspace:test
+
+  Size:
+    name: Check Package Size (treeshaking)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: Build
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Job
+        uses: ./.github/actions/setup-job
+
+      - name: Unit Tests
+        shell: bash
+        run: pnpm run workspace:size
