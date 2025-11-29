@@ -9,8 +9,6 @@ import {
   useState,
 } from 'react';
 import clsx from 'clsx';
-// TODO: Remove once there's full browser support for Dialog's closedby attribute.
-import 'dialog-closedby-polyfill';
 
 import DialogProvider from './DialogProvider.js';
 import { useDialog } from '../../../hooks/dialog.js';
@@ -23,7 +21,7 @@ interface DialogProps extends ComponentProps<'dialog'> {
    * Optional function that renders the trigger element for the dialog.
    * This allows custom trigger components while maintaining dialog functionality.
    */
-  renderTrigger?: () => ReactNode;
+  renderTrigger?: (openDialog: () => void) => ReactNode;
 }
 
 /**
@@ -41,9 +39,22 @@ const Dialog: FC<DialogProps> = ({
   const internalDialogRef = useRef<HTMLDialogElement>(null);
   const mergedRef = useMergedRef(internalDialogRef, forwardedRef);
 
+  const openDialog = () => {
+    internalDialogRef.current?.showModal();
+  };
+
+  // Load polyfill only in browser environment to support closedby attribute
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      // TODO: Remove once there's full browser support for Dialog's closedby attribute.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      import('dialog-closedby-polyfill');
+    }
+  }, []);
+
   return (
     <DialogProvider isOpen={open} dialogRef={internalDialogRef}>
-      {renderTrigger?.()}
+      {renderTrigger?.(openDialog)}
 
       <dialog
         ref={mergedRef}
