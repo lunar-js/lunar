@@ -21,14 +21,13 @@ patchedDependencies:
 importers:
 
   .:
-    dependencies:
-      '@changesets/get-github-info':
-        specifier: ^0.7.0
-        version: 0.7.0
     devDependencies:
       '@changesets/cli':
         specifier: ^2.29.7
         version: 2.29.7(@types/node@24.10.1)
+      '@changesets/get-github-info':
+        specifier: ^0.7.0
+        version: 0.7.0
       '@lunar-js/boiler-room':
         specifier: workspace:^
         version: link:packages/boiler-room
