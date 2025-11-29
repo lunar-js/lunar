@@ -70,8 +70,5 @@
       "@changesets/apply-release-plan@7.0.13": "patches/@changesets__apply-release-plan@7.0.13.patch"
     }
   },
-  "license": "MIT",
-  "dependencies": {
-    "@changesets/get-github-info": "^0.7.0"
-  }
+  "license": "MIT"
 }
