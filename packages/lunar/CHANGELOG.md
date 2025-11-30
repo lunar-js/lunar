@@ -1,5 +1,12 @@
 # @lunar-js/lunar
 
+## 0.0.3 (2025-11-30)
+
+### Changed
+
+- README updates - [`e116830`](https://github.com/lunar-js/lunar/commit/e116830d1d3905588285a209d2ca017c2fc0db43) Thanks
+  astronaut [@prests](https://github.com/prests)!
+
 ## 0.0.2 (2025-11-29)
 
 ### Added
