@@ -46,7 +46,10 @@ const HomePage = () => {
               <h3>Close Request Only Dialog</h3>
             </DialogHeader>
             <div>
-              <p>This dialog uses closedby="closerequest" - it should only close via the close button or ESC key.</p>
+              <p>
+                This dialog uses closedby=&quot;closerequest&quot; - it should only close via the close button or ESC
+                key.
+              </p>
               <p>Clicking the backdrop should NOT close this dialog.</p>
             </div>
             <DialogFooter>

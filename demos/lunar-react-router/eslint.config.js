@@ -1,3 +1,8 @@
 import { baseReactESLintConfig } from '@lunar-js/boiler-room/eslint';
 
-export default [...baseReactESLintConfig];
+export default [
+  ...baseReactESLintConfig,
+  {
+    ignores: ['.react-router/**/*'],
+  },
+];
