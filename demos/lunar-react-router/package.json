@@ -17,6 +17,8 @@
     "____ BUILD COMMANDS ____": "",
     "build": "react-router build",
     "____ VALIDATION COMMANDS ____": "",
+    "lint": "eslint --max-warnings=0 .",
+    "lint:fix": "pnpm run lint --fix",
     "typecheck": "react-router typegen && tsc -p ./tsconfig.json --noEmit"
   },
   "dependencies": {
