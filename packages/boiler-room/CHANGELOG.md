@@ -1,5 +1,13 @@
 # @lunar-js/boiler-room
 
+## 0.2.0 (2026-01-02)
+
+### Fixed
+
+- boiler-room type exposure -
+  [`3116a2b`](https://github.com/lunar-js/lunar/commit/3116a2b721bfed3acdf99c35f3652e4fd8076926) Thanks astronaut
+  [@prests](https://github.com/prests)!
+
 ## 0.1.0 (2025-11-30)
 
 ### Added
