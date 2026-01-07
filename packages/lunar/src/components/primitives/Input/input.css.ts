@@ -32,7 +32,7 @@ const input = style([
       '&[aria-invalid="true"]': {
         borderColor: themeContract.colors.border.error,
       },
-      ...withCustomOutline(themeContract.colors.shadow.destructive, '&[aria-invalid="true"]'),
+      ...withCustomOutline(themeContract.colors.shadow.destructive, '&[aria-invalid="true"]:focus-visible'),
     },
 
     '::file-selector-button': {

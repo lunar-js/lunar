@@ -83,7 +83,12 @@ export { useDialog } from './hooks/dialog.js';
 /**
  * Styling Utility Exports
  */
-export { withCustomOutline, withSafeTransition, withBreakpoint } from './themes/styles/utilities.js';
+export {
+  withCustomOutline,
+  withSafeTransition,
+  withBreakpoint,
+  withVisuallyHidden,
+} from './themes/styles/utilities.js';
 
 export { BREAKPOINT__SM, BREAKPOINT__MD, BREAKPOINT__LG } from './constants/theming.js';
 export {
