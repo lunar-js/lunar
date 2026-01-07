@@ -1,5 +1,13 @@
 # @lunar-js/lunar
 
+## 0.1.0 (2026-01-07)
+
+### Added
+
+- add visually hidden style utility -
+  [`b072927`](https://github.com/lunar-js/lunar/commit/b0729275b5ddf45aff1b151c16e1ea287c189689) Thanks astronaut
+  [@prests](https://github.com/prests)!
+
 ## 0.0.3 (2025-11-30)
 
 ### Changed
