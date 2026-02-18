@@ -1,5 +1,13 @@
 # @lunar-js/lunar
 
+## 0.1.1 (2026-02-18)
+
+### Changed
+
+- extend type of withBreakpoint to allow updating css variables -
+  [`8b9853a`](https://github.com/lunar-js/lunar/commit/8b9853a4263ddd54b96ba6030ce950d3143042ce) Thanks astronaut
+  [@prests](https://github.com/prests)!
+
 ## 0.1.0 (2026-01-07)
 
 ### Added
