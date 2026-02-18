@@ -124,7 +124,7 @@ const withCustomOutline = (outlineColor: string, selector = ':focus-visible'): R
  *   }
  * });
  */
-const withBreakpoint = (breakpoint: string, styles: CSSProperties): StyleRule => ({
+const withBreakpoint = (breakpoint: string, styles: StyleRule): StyleRule => ({
   '@media': {
     [`(min-width: ${breakpoint})`]: styles,
   },
