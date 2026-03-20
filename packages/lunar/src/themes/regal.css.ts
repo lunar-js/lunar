@@ -14,7 +14,6 @@ import { SPACING } from './tokens/primitives/spacing.js';
 import { BORDER_RADIUS, BORDER_WIDTH } from './tokens/primitives/borders.js';
 import { BOX_SHADOW } from './tokens/primitives/shadows.js';
 import {
-  FONT_FAMILY,
   FONT_SIZE,
   FONT_WEIGHT,
   LINE_HEIGHT__TIGHT,
@@ -236,7 +235,7 @@ const regalThemeVars = createTheme(themeContract, {
   },
   typography: {
     fontFamily: {
-      base: FONT_FAMILY.sans.fallback,
+      base: '-apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif',
     },
     display: {
       xl: {
