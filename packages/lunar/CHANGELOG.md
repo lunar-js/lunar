@@ -1,5 +1,13 @@
 # @lunar-js/lunar
 
+## 0.2.0 (2026-03-20)
+
+### Fixed
+
+- support more system font better -
+  [`723e7f2`](https://github.com/lunar-js/lunar/commit/723e7f26333a5594b5cb61dfccc217f3ad31f596) Thanks astronaut
+  [@prests](https://github.com/prests)!
+
 ## 0.1.1 (2026-02-18)
 
 ### Changed
